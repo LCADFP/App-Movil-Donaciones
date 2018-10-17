@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="design">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inicio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>    
+
+  <div class="container">
+    <ion-grid >
+      <ion-row>        
+        <ion-col>
+          <img src="../assets/imgs/menuPrincipal/icono_nueva.png" class="icon-principal" (click)="godonacion()">           
+          <h4 class="text-icon">Nueva Donacion</h4>                  
+        </ion-col>        
+                
+        <ion-col>
+          <img src="../assets/imgs/menuPrincipal/iconoHis.png" alt="" class="icon-principal">          
+          <h4 class="text-icon">Historial de Donaciones</h4>            
+        </ion-col>          
+      </ion-row>
+      
+      <ion-col></ion-col>
+
+      <ion-row>
+        <ion-col>
+          <img src="../assets/imgs/menuPrincipal/codigoPoli.png" alt="" class="icon-principal">          
+          <h4 class="text-icon">Fundaciones disponibles</h4>            
+        </ion-col>
+
+        <ion-col>
+          <img src="../assets/imgs/menuPrincipal/iconoContact.png" alt="" class="icon-principal">         
+          <h4 class="text-icon">Historial de records</h4>            
+        </ion-col>
+                  
+               
+      </ion-row>     
+      
+    </ion-grid>
+  </div>  
+  
+</ion-content>

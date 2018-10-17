@@ -1,0 +1,7 @@
+{
+  "name": "adonarsedijo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

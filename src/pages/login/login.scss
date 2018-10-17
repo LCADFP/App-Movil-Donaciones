@@ -1,0 +1,42 @@
+page-login {
+
+    
+    #main{background: color($colors, design)}
+    
+    .toolbar-title-md {
+        color: #ffffff;
+        padding-top: 5px;
+        text-align: center;
+    }
+    
+    img{
+        margin: auto;
+        display: block;
+        width: 140px !important;
+        height: 140px !important;
+    }    
+
+    .login-box{margin-top: 45px;}
+    
+    .label, .label-md{color: #ffffff;}
+
+    .forgot-link span, .signUp-link span{color: #ffffff;}
+
+    .forgot-link .button-inner{ display: block;}
+
+    .submit-btn{
+        margin-top: -15px;
+        height: 46px;
+    }
+    
+    .item{
+        background-color:color($colors, design);
+        color: #fafafa;
+    }
+    
+    .item:focus{
+        color: #ffffff;
+    }
+    
+    
+}

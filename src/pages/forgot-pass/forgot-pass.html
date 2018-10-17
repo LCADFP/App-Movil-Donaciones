@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar color="design">
+    <ion-title>Recordar contrase&ntilde;a</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-col></ion-col>
+    <div class="forgot-box">
+      <form [formGroup] = "formRememberPass" (ngSubmit)="rememberPass()">
+        <ion-row>
+          <ion-col>
+            <ion-list>
+
+              <ion-item>
+                <ion-label floating>Correo electr&oacute;nico</ion-label>
+                <ion-input type="email" formControlName="email" required></ion-input>
+              </ion-item>
+
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="forgot-col">
+            <div padding>
+                <button ion-button class="submit-btn" full type="submit" [disabled]="!formRememberPass.valid">
+                  Enviar
+                </button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </form>
+    </div>
+
+</ion-content>

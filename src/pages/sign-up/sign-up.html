@@ -1,0 +1,137 @@
+<!--
+  Generated template for the SignUpPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="design">
+    <ion-title>Formulario de Registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="content-log">
+    <form [formGroup] = "formRegistro" (ngSubmit)="registroUsuarios()">
+      <ion-list>
+
+        <ion-item>    
+          <ion-label floating>Nombres</ion-label>
+          <ion-input formControlName="nombres" type="text"></ion-input>    
+        </ion-item>
+
+        <div *ngIf="formRegistro.get('nombres').invalid && (formRegistro.get('nombres').dirty || formRegistro.get('nombres').touched)" class="alert alert-danger">
+          <div *ngIf="formRegistro.get('nombres').errors?.required">
+            <span class="input-error">Campo obligatorio</span>
+          </div>
+        </div>
+          
+        <ion-item>
+          <ion-label floating>Apellidos</ion-label>
+          <ion-input formControlName="apellidos" type="text"></ion-input>            
+        </ion-item>
+
+        <div *ngIf="formRegistro.get('apellidos').invalid && (formRegistro.get('apellidos').dirty || formRegistro.get('apellidos').touched)" class="alert alert-danger">
+          <div *ngIf="formRegistro.get('apellidos').errors?.required">
+            <span class="input-error">Campo obligatorio</span>
+          </div>
+        </div>
+      
+        <ion-item>
+          <ion-label stacked>Fecha de nacimiento</ion-label>        
+          <ion-input formControlName="fecha_nac" type="date" placeholder="DD/MM/AAAA"></ion-input>           
+        </ion-item>
+
+        <div *ngIf="formRegistro.get('fecha_nac').invalid && (formRegistro.get('fecha_nac').dirty || formRegistro.get('fecha_nac').touched)" class="alert alert-danger">
+          <div *ngIf="formRegistro.get('fecha_nac').errors?.required">
+            <span class="input-error">Campo obligatorio</span>
+          </div>
+        </div>
+      
+        <ion-item>
+          <ion-label floating>Direcci&oacute;n</ion-label>        
+          <ion-input formControlName="direccion" type="text"></ion-input>              
+        </ion-item>
+
+        <div *ngIf="formRegistro.get('direccion').invalid && (formRegistro.get('direccion').dirty || formRegistro.get('direccion').touched)" class="alert alert-danger">
+          <div *ngIf="formRegistro.get('direccion').errors?.required" >
+            <span class="input-error">Campo obligatorio</span>
+          </div>
+        </div>
+      
+        <ion-item>
+          <ion-label floating>Tel&eacute;fono</ion-label>        
+          <ion-input formControlName="telefono" type="phone"></ion-input>              
+        </ion-item>
+
+        <div *ngIf="formRegistro.get('telefono').invalid && (formRegistro.get('telefono').dirty || formRegistro.get('telefono').touched)" class="alert alert-danger">
+          <div *ngIf="formRegistro.get('telefono').errors?.required">
+            <span class="input-error">Campo obligatorio</span>
+          </div>
+
+          <div *ngIf="formRegistro.get('telefono').errors['minlength']">
+            <span class="input-error">M&iacute;nimo 7 caracteres</span>
+          </div> 
+        </div>
+      
+        <ion-item>
+          <ion-label floating>Correo electr&oacute;nico</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>                   
+        </ion-item>
+       
+        <div *ngIf="formRegistro.get('email').invalid && (formRegistro.get('email').dirty || formRegistro.get('email').touched)" class="alert alert-danger">
+          <div *ngIf="formRegistro.get('email').errors['required']" >
+            <span color="danger" class="input-error">Campo obligatorio</span>
+          </div>
+
+          <div *ngIf="formRegistro.get('email').errors['email']" >
+            <span class="input-error">Correo electr&oacute;nico incorrecto</span>
+          </div>
+        </div>
+        
+      
+        <ion-item>
+          <ion-label floating>Contrase&ntilde;a</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>            
+        </ion-item>
+
+        <div *ngIf="formRegistro.get('password').invalid && (formRegistro.get('password').dirty || formRegistro.get('password').touched)" class="alert alert-danger">
+          <div *ngIf="formRegistro.get('password').errors?.required">
+            <span class="input-error">Campo obligatorio</span>
+          </div>
+
+          <div *ngIf="formRegistro.get('password').errors['minlength']">
+            <span class="input-error">M&iacute;nimo 6 caracteres</span>
+          </div> 
+        </div>       
+      
+        <ion-item>
+          <ion-label floating>Repetir contrase&ntilde;a</ion-label>
+          <ion-input formControlName="password_confirmation" type="password" [compareEqual]="formRegistro.get('password').value"></ion-input>            
+        </ion-item>
+
+        <div *ngIf="formRegistro.get('password_confirmation').invalid && (formRegistro.get('password_confirmation').dirty || formRegistro.get('password_confirmation').touched)" class="alert alert-danger">
+          <div *ngIf="formRegistro.get('password_confirmation').errors?.required" >
+            <span class="input-error">Campo obligatorio</span>
+          </div>
+
+          <div *ngIf="formRegistro.get('password_confirmation').errors.compareEqual">
+            <span class="input-error">Contrase&ntilde;as no coinciden</span>
+          </div>
+        </div>         
+                
+      </ion-list>
+          
+      <div padding>
+        <button ion-button class="submit-btn" full type="submit" [disabled]="!formRegistro.valid" color="design">Registrarse</button>
+      </div>
+
+    </form>    
+    
+  </div>
+
+</ion-content>

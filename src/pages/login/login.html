@@ -1,0 +1,63 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+</ion-header>
+
+<ion-content id="main" padding>
+
+    <ion-col></ion-col>
+    <ion-col>
+      <img src="../assets/imgs/logo.png" alt="logo-app">
+    </ion-col> 
+  
+    <ion-title>Inicio de sesi&oacute;n</ion-title>
+
+  
+
+    <ion-col></ion-col>
+    <div class="login-box">
+      <form [formGroup] = "formLogin" (ngSubmit)="loginUsuario()">
+        <ion-row>
+          <ion-col class="input-data">
+            <ion-list>
+              <ion-item>
+                <ion-label floating color="sec-text">Correo electr&oacute;nico</ion-label>
+                <ion-input type="email" formControlName="email"required></ion-input>                
+              </ion-item>     
+
+              <ion-item>
+                <ion-label floating color="sec-text">Contrase&ntilde;a</ion-label>
+                <ion-input type="password" formControlName="password" required></ion-input>                       
+              </ion-item>
+            </ion-list>
+        </ion-col>
+      </ion-row>             
+
+      <ion-row>
+        <ion-col class="signup-col">
+            <div padding>
+                <button ion-button class="submit-btn" full type="submit" [disabled]="!formLogin.valid" color="btn-dark">Iniciar sesi&oacute;n</button>
+            </div>
+        </ion-col>
+      </ion-row>        
+
+    </form>
+
+    <div class="forgot-link">
+      <a ion-button block clear (click)="goToForgotPass()">
+        ¿&Oacute;lvido su contrase&ntilde;a?
+      </a> 
+    </div>  
+
+    <div class="signUp-link">      
+      <a ion-button clear block (click)="goToSignUp()">
+        Registrarse
+      </a>    
+    </div>
+  </div>
+</ion-content>
