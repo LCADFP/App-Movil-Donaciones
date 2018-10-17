@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import firebase from 'firebase';
-import { Camera } from '@ionic-native/camera';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { ModalController } from 'ionic-angular';
 import { SubirPage } from '../subir/subir';
-
 
 
 /**
@@ -21,14 +18,20 @@ import { SubirPage } from '../subir/subir';
   selector: 'page-donaciones',
   templateUrl: 'donaciones.html',
 })
-export class DonacionesPage {
 
-  constructor(private modalCtrl: ModalController) {}
-       
-          mostrar_modal(){
+export class DonacionesPage {
+  hayMas:boolean = true;
+  posts: Observable<any[]>;
+
+  constructor(private modalCtrl: ModalController,afDB: AngularFireDatabase) {
+    this.posts = afDB.list('post').valueChanges();
+  }  
+            mostrar_modal(){
           let modal = this.modalCtrl.create( SubirPage );
           modal.present();
       }
+      doInfinite(infiniteScroll) {  }
+      compartir( post:any ){ }    
 
   // takeSelfie() {
   //   this.cameraPlugin.getPicture({

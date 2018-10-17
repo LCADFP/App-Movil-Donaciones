@@ -7,13 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>subir</ion-title>
-    <ion-navbar>
-      <ion-buttons>
-          <button ion-button (click)="cerrar_modal()">
-              Cerrar
-          </button>
-      </ion-buttons>
+        <ion-buttons>
+            <button ion-button (click)="cerrar_modal()">
+                Cerrar
+            </button>
+        </ion-buttons>
+        <ion-title>{{ titulo | placeHolder:'Crear nuevo post' }}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="crear_post()"
+                    [disabled]=" titulo.length <= 1 || imagenPreview.length <= 1 ">
+                Crear post
+            </button>
+        </ion-buttons>
       <ion-title>Nuevo</ion-title>     
   </ion-navbar>
 
