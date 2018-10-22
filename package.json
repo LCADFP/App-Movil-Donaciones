@@ -30,6 +30,7 @@
         "angular-compare-validator": "0.2.0",
         "angularfire2": "5.0.2",
         "cordova-android": "7.1.1",
+        "cordova-android-play-services-gradle-release": "^1.4.4",
         "cordova-android-support-gradle-release": "^1.4.5",
         "cordova-plugin-camera": "4.0.3",
         "cordova-plugin-device": "2.0.2",
@@ -72,6 +73,9 @@
             "cordova-plugin-camera": {},
             "cordova-android-support-gradle-release": {
                 "ANDROID_SUPPORT_VERSION": "27.+"
+            },
+            "cordova-android-play-services-gradle-release": {
+                "PLAY_SERVICES_VERSION": "16.+"
             }
         },
         "platforms": [
