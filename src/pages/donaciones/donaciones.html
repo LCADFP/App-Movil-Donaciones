@@ -16,17 +16,24 @@
     <ion-card *ngFor="let post of posts | async">
         <img [src]="post.img">
         <ion-card-content>
-            <ion-card-title>
+            <ion-card-title text-center>
                 {{ post.titulo }}
             </ion-card-title>
         </ion-card-content>
         <ion-row>
-            <ion-col text-right>
-                <button ion-button clear small color="primary" icon-left
-                        (click)="compartir(post)">
-                    <ion-icon name="share-alt"></ion-icon>  Compartir
-                  </button>
-            </ion-col>
+                <ion-col col-6>
+                    <button ion-button item-left block
+                            (click)="seleccionar_foto()">
+                        <ion-icon name="md-thumbs-up"></ion-icon> &nbsp;Lo quiero!
+                    </button>
+                </ion-col>
+
+                <ion-col col-6>
+                    <button ion-button block item-left color="danger"
+                            (click)="mostrar_camara()">
+                        <ion-icon name="md-thumbs-down"></ion-icon>  &nbsp;No lo quiero!
+                    </button>
+                </ion-col>
         </ion-row>
     </ion-card>
   <ion-fab bottom right>
