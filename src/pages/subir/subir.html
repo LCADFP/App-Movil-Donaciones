@@ -35,9 +35,35 @@
         </ion-item>
 
         <ion-item>
+                <ion-label floating>Estado</ion-label>
+                <ion-select>
+                        <ion-option value="Enuevo">Nuevo</ion-option>
+                        <ion-option value="Ebueno">Bueno</ion-option>
+                        <ion-option value="Eregular">Regular</ion-option>
+                </ion-select>
+        </ion-item>
+
+        <ion-item>
+                <ion-label floating>Categoria</ion-label>
+                <ion-select>
+                  <ion-option value="Juguetes">Juguetes</ion-option>
+                  <ion-option value="Libros">Libros</ion-option>
+                  <ion-option value="ropa">Ropa</ion-option>
+                  <ion-option value="mobiliario">Mobiliario</ion-option>
+                  <ion-option value="alimentos">Alimentos</ion-option>
+                  <ion-option value="otro">otro</ion-option>
+                </ion-select>
+        </ion-item>
+
+        <ion-item>
+                <ion-label floating>Cantidad</ion-label>
+                <ion-input type="text" ></ion-input>
+        </ion-item>
+
+        <ion-item>
                 <ion-label floating>Descripcion</ion-label>
                 <ion-textarea ></ion-textarea>
-            </ion-item>
+        </ion-item>
 
         <ion-item *ngIf="imagenPreview">
             <img [src]="imagenPreview">
