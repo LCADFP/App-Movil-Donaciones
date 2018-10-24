@@ -19,6 +19,15 @@
     <form [formGroup] = "formRegistro" (ngSubmit)="registroUsuarios()">
       <ion-list>
 
+          <ion-item>
+              <ion-label>Tipo de usuario</ion-label>
+              <ion-select>
+                <ion-option value="PerNatural">Persona Natural</ion-option>
+                <ion-option value="Fundacion">Fundacion</ion-option>
+              </ion-select>
+            </ion-item>
+            
+
         <ion-item>    
           <ion-label floating>Nombres</ion-label>
           <ion-input formControlName="nombres" type="text"></ion-input>    
