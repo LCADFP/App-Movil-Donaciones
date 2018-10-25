@@ -12,7 +12,8 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { ForgotPassPage } from '../pages/forgot-pass/forgot-pass';
-import {DonacionesPage} from '../pages/donaciones/donaciones'
+import { DonacionesPage} from '../pages/donaciones/donaciones'
+import { FundacionesPage} from '../pages/fundaciones/fundaciones'
 import { SubirPage } from '../pages/subir/subir';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -44,6 +45,7 @@ export const firebaseConfig = {
     SignUpPage,
     ForgotPassPage,
     DonacionesPage,
+    FundacionesPage,
     SubirPage
   ],
 
@@ -67,6 +69,7 @@ export const firebaseConfig = {
     SignUpPage,
     ForgotPassPage,
     DonacionesPage,
+    FundacionesPage,
     SubirPage
 
   ],
