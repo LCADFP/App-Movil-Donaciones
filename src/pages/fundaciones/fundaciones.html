@@ -1,0 +1,35 @@
+<!--
+  Generated template for the FundacionesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="design">
+    <ion-title>Fundaciones</ion-title>
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let fundacions of fundacions | async">
+        <img [src]="fundacions.img">
+        <ion-card-content>
+            <ion-card-title text-center>
+                {{ fundacions.titulo }}
+            </ion-card-title>
+            {{ fundacions.descripcion }} 
+        </ion-card-content>
+    </ion-card>
+  <!-- <ion-fab bottom right>
+    <button ion-fab color="danger" (click)="mostrar_modal()">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-fab> -->
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)"
+                    [enabled]="hayMas">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+
+</ion-content>
