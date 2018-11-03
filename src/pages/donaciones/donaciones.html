@@ -19,7 +19,12 @@
             <ion-card-title text-center>
                 {{ post.titulo }}
             </ion-card-title>
+            aqui va la descripcion de cada imagen desde la bd. <br>
+            estado : nuevo / usado <br>
+            categoria : 
         </ion-card-content>
+
+        
         <ion-row>
                 <ion-col col-6>
                     <button ion-button item-left block
@@ -38,7 +43,7 @@
     </ion-card>
   <ion-fab bottom right>
     <button ion-fab color="danger" (click)="mostrar_modal()">
-    <ion-icon name="add"></ion-icon>
+    <ion-icon text-center name="add"></ion-icon>
   </button>
 </ion-fab>
 <ion-infinite-scroll (ionInfinite)="doInfinite($event)"
