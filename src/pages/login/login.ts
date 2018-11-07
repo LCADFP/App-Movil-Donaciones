@@ -1,5 +1,6 @@
+import { HomefundacionPage } from './../homefundacion/homefundacion';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Content } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { SignUpPage } from '../sign-up/sign-up';
 import { ForgotPassPage } from '../forgot-pass/forgot-pass';
@@ -36,14 +37,14 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  ionViewWillEnter(){
+  // ionViewWillEnter(){
 		
-		let user=localStorage.getItem("user");
-		let jwt=localStorage.getItem("jwt");
-		if(user && jwt ){
-			this.navCtrl.setRoot(HomePage);
-		}
-	}  
+	// 	let user=localStorage.getItem("user");
+	// 	let jwt=localStorage.getItem("jwt");
+	// 	if(user && jwt ){
+	// 		this.navCtrl.setRoot(HomefundacionPage);
+	// 	}
+	// }  
 
   loginUsuario(){
 
@@ -58,14 +59,30 @@ export class LoginPage {
     .subscribe(
       data => {
         localStorage.setItem('user', JSON.stringify(data["user"]));
-        localStorage.setItem('jwt', data["jwt"]);
+        localStorage.setItem('jwt', data["jwt"])
+        this.validaterole(data);
         this.showNotification(data);
-        this.navCtrl.setRoot(HomePage);
-      },
-
+         
       err => {console.log(err); this.showError(err)}
+    }
     );
   }
+
+
+validaterole(data):any{
+   let rol= data.user.role_id
+     
+     if (rol === 2)
+     {
+       this.navCtrl.setRoot(HomePage);
+     }
+     else
+     {
+       this.navCtrl.setRoot(HomefundacionPage);
+     }
+     
+}
+
 
   showError(err): any {
 		let errors={

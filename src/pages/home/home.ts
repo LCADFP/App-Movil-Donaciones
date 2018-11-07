@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-// import { LoginPage } from '../login/login';
+import { TipsPage } from '../tips/tips'; 
 import { DonacionesPage } from '../donaciones/donaciones';
 import { FundacionesPage} from '../fundaciones/fundaciones';
+
 
 
 @Component({
@@ -23,6 +24,11 @@ export class HomePage {
   gofundacion()
   {
     this.navCtrl.push(FundacionesPage);
+  }
+
+  gotips()
+  {
+    this.navCtrl.push(TipsPage);
   }
 
 }

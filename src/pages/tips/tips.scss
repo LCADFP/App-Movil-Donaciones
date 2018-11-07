@@ -1,0 +1,41 @@
+page-tips {
+
+    .md-card-bg .md-card-subtitle,
+    .md-card-bg .md-card-title {
+
+        position: absolute;
+        top: 50%;
+        color: #fff;
+        width: 100%;
+    }
+
+
+    img{
+        margin:auto;
+        // margin-top: 40px;
+        width: 100px !important;
+        height: 100px !important;
+        // float: left;
+        transition: transform 0.25s ease;
+        cursor: zoom-in;
+    }
+
+    img:active{
+        transform: scale(3);
+        cursor: zoom-out;
+      }
+
+    .md-card-bg .md-card-title {
+        margin-top: -30px;
+
+    }
+    .icon{
+        width: 24px;
+        height: 24px;
+    }
+
+    // .md-card-bg .md-card-subtitle {
+    //     margin-top: 10px;
+    // }
+
+}

@@ -16,9 +16,10 @@ export class SignUpPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     public fb:FormBuilder, public userService :UserServiceProvider, private alertCtrl : AlertController) {
-    
+  
     this.formRegistro = this.fb.group({ //Validacion de campos
 
+      role_id : ['', Validators.compose([Validators.required])],
       nombres :['', Validators.compose([Validators.required])],
       apellidos :['', Validators.required],
       fecha_nac :['', Validators.required],
@@ -27,27 +28,30 @@ export class SignUpPage {
       email :['', Validators.compose([Validators.required, Validators.email])],
       password :['', Validators.compose([Validators.required, Validators.minLength(6)])],
       password_confirmation :['', Validators.required]        
-    
+      
     });    
-    
+      
   }
 
-     
-   
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignUpPage');
   }
 
+  
   //Envio de datos al backend
   registroUsuarios(){
 
     let userData={
+      
+      
       nombres: this.formRegistro.value.nombres,
       apellidos: this.formRegistro.value.apellidos,
       fecha_nac: this.formRegistro.value.fecha_nac,
       direccion: this.formRegistro.value.direccion,
       telefono :this.formRegistro.value.telefono,
       email : this.formRegistro.value.email,
+      role_id: this.formRegistro.value.role_id,
       password: this.formRegistro.value.password,
       password_confirmation: this.formRegistro.value.password_confirmation
 

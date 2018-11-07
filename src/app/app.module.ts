@@ -9,12 +9,14 @@ import { PipesModule} from '../pipes/pipes.module';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { HomefundacionPage } from './../pages/homefundacion/homefundacion';
 import { LoginPage } from '../pages/login/login';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { ForgotPassPage } from '../pages/forgot-pass/forgot-pass';
 import { DonacionesPage} from '../pages/donaciones/donaciones'
 import { FundacionesPage} from '../pages/fundaciones/fundaciones'
 import { SubirPage } from '../pages/subir/subir';
+import { TipsPage } from '../pages/tips/tips';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -46,7 +48,9 @@ export const firebaseConfig = {
     ForgotPassPage,
     DonacionesPage,
     FundacionesPage,
-    SubirPage
+    HomefundacionPage,
+    SubirPage,
+    TipsPage
   ],
 
   imports: [ 
@@ -70,8 +74,9 @@ export const firebaseConfig = {
     ForgotPassPage,
     DonacionesPage,
     FundacionesPage,
-    SubirPage
-
+    HomefundacionPage,
+    SubirPage,
+    TipsPage
   ],
   providers: [
     StatusBar,
