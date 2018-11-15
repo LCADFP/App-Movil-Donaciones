@@ -28,6 +28,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/da
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { CargaArchivoProvider } from '../providers/carga-archivo/carga-archivo';
+import { DonacionServiceProvider } from '../providers/donacion-service/donacion-service';
 
 
 export const firebaseConfig = {
@@ -86,7 +87,8 @@ export const firebaseConfig = {
     AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
-    CargaArchivoProvider
+    CargaArchivoProvider,
+    DonacionServiceProvider
   ]
 })
 export class AppModule {}
