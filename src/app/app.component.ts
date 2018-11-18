@@ -5,8 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import {DonacionesPage} from '../pages/donaciones/donaciones'
-import {FundacionesPage} from '../pages/fundaciones/fundaciones'
+import {DonacionesPage} from '../pages/donaciones/donaciones';
+import {FundacionesPage} from '../pages/fundaciones/fundaciones';
+import { TipsPage } from './../pages/tips/tips';
 
 import { ITEMS_MENU } from "../data/data.menu";
 import { Menu } from "../interfaces/menu.interface";
@@ -31,8 +32,8 @@ export class MyApp {
     this.pages = [
       { title: 'Inicio', component: HomePage },
       { title: 'Nueva Donacion', component: DonacionesPage },  
-      { title: 'Fundaciones disponibles', component: FundacionesPage }   
-      
+      { title: 'Fundaciones disponibles', component: FundacionesPage }, 
+      { title: 'Tips para donar', component: TipsPage }
     ];
 
     this.menu = ITEMS_MENU.slice(0);

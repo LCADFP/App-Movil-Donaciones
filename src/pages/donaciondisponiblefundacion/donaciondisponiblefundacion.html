@@ -7,50 +7,21 @@
 <ion-header>
 
   <ion-navbar color="design">
-    <ion-title>Donaciones</ion-title>
+    <ion-title>Donaciones disponibles</ion-title>
   </ion-navbar>
   
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let post of posts | async">
-        <img [src]="post.img">
+    <ion-card *ngFor="let donaciones of donaciones">
+        <img [src]="donaciones.img">
         <ion-card-content>
             <ion-card-title text-center>
-                {{ post.titulo }}
+                {{ donaciones.nombre }}
             </ion-card-title>
-            aqui va la descripcion de cada imagen desde la bd. <br>
-            estado : nuevo / usado <br>
-            categoria : 
+            <p>{{donaciones.estado}}</p>
         </ion-card-content>
-
-        
-        <ion-row>
-                <ion-col col-6>
-                    <button ion-button item-left block
-                            (click)="seleccionar_foto()">
-                        <ion-icon name="md-thumbs-up"></ion-icon> &nbsp;Lo quiero!
-                    </button>
-                </ion-col>
-
-                <ion-col col-6>
-                    <button ion-button block item-left color="danger"
-                            (click)="mostrar_camara()">
-                        <ion-icon name="md-thumbs-down"></ion-icon>  &nbsp;No lo quiero!
-                    </button>
-                </ion-col>
-        </ion-row>
     </ion-card>
-  <ion-fab bottom right>
-    <button ion-fab color="danger" (click)="mostrar_modal()">
-    <ion-icon text-center name="add"></ion-icon>
-  </button>
-</ion-fab>
-<ion-infinite-scroll (ionInfinite)="doInfinite($event)"
-                    [enabled]="hayMas">
-   <ion-infinite-scroll-content></ion-infinite-scroll-content>
- </ion-infinite-scroll>
-
 </ion-content>
 
 

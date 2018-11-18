@@ -9,19 +9,13 @@
   <ion-navbar>
         <ion-buttons text-right>
             <button ion-button (click)="cerrar_modal()">
-                <ion-icon name="md-close-circle"></ion-icon>
+                <ion-icon name="md-close-circle" style="font-size:28px"></ion-icon>
             </button>
         </ion-buttons>
         
         <ion-title text-center>{{ titulo | placeHolder:'Agregar nueva donación' }}</ion-title>
             <div text-center>Por favor registre los detalles de la donación</div>
-        <ion-buttons end>
-            <button ion-button (click)="crear_post()"
-                    [disabled]=" titulo.length <= 1 || imagenPreview.length <= 1 ">
-                
-            </button>
-        </ion-buttons>
-
+        
               
   </ion-navbar>
 
@@ -31,7 +25,7 @@
     <ion-list>
         <ion-item>
             <ion-label floating>Nombre del articulo</ion-label>
-            <ion-input type="text" ></ion-input>
+            <ion-input type="text" [(ngModel)]="titulo"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -86,4 +80,14 @@
             </ion-col>
         </ion-row>
     </ion-grid>
+
+
+        <ion-buttons end>
+            <button ion-button block item-left (click)="crear_post()"
+                [disabled]=" titulo.length <= 1 || imagenPreview.length <= 1 ">
+                crear donación
+            
+            </button>
+        </ion-buttons>
+
 </ion-content>

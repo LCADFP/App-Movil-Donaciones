@@ -13,23 +13,30 @@
 </ion-header>
 
 
+
 <ion-content padding>
+
+    
 
   <div class="content-log">
     <form [formGroup] = "formRegistro" (ngSubmit)="registroUsuarios()">
-      <ion-list>
-
-          <ion-item>
-              <ion-label>Tipo de usuario</ion-label>
-              <ion-select>
-                <ion-option value="PerNatural">Persona Natural</ion-option>
-                <ion-option value="Fundacion">Fundacion</ion-option>
-              </ion-select>
-            </ion-item>
-            
+      <ion-list>       
+      
+      <ion-item>
+          <ion-label>Tipo de usuario</ion-label>
+        <ion-select ([ngModel])="tipousuario"  formControlName="role_id"> 
+          <ion-option value="2">Donante</ion-option>
+          <ion-option value="3">Fundación</ion-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="formRegistro.get('role_id').invalid && (formRegistro.get('role_id').dirty || formRegistro.get('role_id').touched)" class="alert alert-danger">
+        <div *ngIf="formRegistro.get('role_id').errors?.required">
+          <span class="input-error">Campo obligatorio</span>
+        </div>
+      </div>
 
         <ion-item>    
-          <ion-label floating>Nombres</ion-label>
+          <ion-label floating>Nombre persona / fundacion </ion-label>
           <ion-input formControlName="nombres" type="text"></ion-input>    
         </ion-item>
 

@@ -1,3 +1,4 @@
+
 import { FormsModule } from '@angular/forms';
 import { MbscModule } from '@mobiscroll/angular';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,12 +10,15 @@ import { PipesModule} from '../pipes/pipes.module';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { HomefundacionPage } from './../pages/homefundacion/homefundacion';
 import { LoginPage } from '../pages/login/login';
 import { SignUpPage } from '../pages/sign-up/sign-up';
 import { ForgotPassPage } from '../pages/forgot-pass/forgot-pass';
 import { DonacionesPage} from '../pages/donaciones/donaciones'
 import { FundacionesPage} from '../pages/fundaciones/fundaciones'
 import { SubirPage } from '../pages/subir/subir';
+import { TipsPage } from '../pages/tips/tips';
+import { DonaciondisponiblefundacionPage } from './../pages/donaciondisponiblefundacion/donaciondisponiblefundacion';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,6 +30,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/da
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { CargaArchivoProvider } from '../providers/carga-archivo/carga-archivo';
+import { DonacionServiceProvider } from '../providers/donacion-service/donacion-service';
 
 
 export const firebaseConfig = {
@@ -46,7 +51,10 @@ export const firebaseConfig = {
     ForgotPassPage,
     DonacionesPage,
     FundacionesPage,
-    SubirPage
+    HomefundacionPage,
+    DonaciondisponiblefundacionPage,
+    SubirPage,
+    TipsPage
   ],
 
   imports: [ 
@@ -70,8 +78,10 @@ export const firebaseConfig = {
     ForgotPassPage,
     DonacionesPage,
     FundacionesPage,
-    SubirPage
-
+    HomefundacionPage,
+    DonaciondisponiblefundacionPage,
+    SubirPage,
+    TipsPage
   ],
   providers: [
     StatusBar,
@@ -81,7 +91,8 @@ export const firebaseConfig = {
     AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
-    CargaArchivoProvider
+    CargaArchivoProvider,
+    DonacionServiceProvider
   ]
 })
 export class AppModule {}

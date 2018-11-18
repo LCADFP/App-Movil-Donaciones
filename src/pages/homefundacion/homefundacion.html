@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="design">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inicio Fundación</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>    
+
+  <div class="container">
+    <ion-grid >
+      <ion-row>        
+        <ion-col>
+          <img src="../assets/imgs/menuFundacion/Disponibles.png" class="icon-principal" (click)="godonacion1()">           
+          <h4 class="text-icon">Donaciones disponibles</h4>                  
+        </ion-col>        
+                
+        <ion-col>
+          <img src="../assets/imgs/menuFundacion/pendientes.png" alt="" class="icon-principal">          
+          <h4 class="text-icon">Pendientes por aprobar</h4>            
+        </ion-col>          
+      </ion-row>
+      
+      <ion-col></ion-col>
+
+      <ion-row>
+        <ion-col>
+          <img src="../assets/imgs/menuFundacion/recibidas.png" alt="" class="icon-principal">          
+          <h4 class="text-icon">Donaciones recibidas</h4>            
+        </ion-col>
+
+        <ion-col>
+          <img src="../assets/imgs/menuFundacion/pasos.png" alt="" class="icon-principal">         
+          <h4 class="text-icon">Paso a paso</h4>            
+        </ion-col>
+                  
+               
+      </ion-row>     
+      
+    </ion-grid>
+  </div>  
+  
+</ion-content>

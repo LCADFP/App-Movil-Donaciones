@@ -9,6 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class UserServiceProvider {
+ 
+  apiUrl = 'http://localhost:3000/';
 
   constructor(public http: HttpClient) {
     console.log('Hello UserServiceProvider Provider');
@@ -28,8 +30,6 @@ export class UserServiceProvider {
    let completeUrl = apiUrl + url;
    return this.http.post(completeUrl, json, options);
 
-  }
-
-  
+  } 
   
 }
