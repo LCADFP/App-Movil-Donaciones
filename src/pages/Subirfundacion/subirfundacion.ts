@@ -13,7 +13,7 @@ import { CargaArchivoProvider } from "../../providers/carga-archivo/carga-archiv
 
 @Component({
   selector: 'page-subir',
-  templateUrl: 'subir.html',
+  templateUrl: 'subirfundacion.html',
 })
 export class SubirfundacionPage {
   titulo: string = "";

@@ -1,3 +1,4 @@
+
 import { FormsModule } from '@angular/forms';
 import { MbscModule } from '@mobiscroll/angular';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +18,7 @@ import { DonacionesPage} from '../pages/donaciones/donaciones'
 import { FundacionesPage} from '../pages/fundaciones/fundaciones'
 import { SubirPage } from '../pages/subir/subir';
 import { TipsPage } from '../pages/tips/tips';
+import { DonaciondisponiblefundacionPage } from './../pages/donaciondisponiblefundacion/donaciondisponiblefundacion';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -50,6 +52,7 @@ export const firebaseConfig = {
     DonacionesPage,
     FundacionesPage,
     HomefundacionPage,
+    DonaciondisponiblefundacionPage,
     SubirPage,
     TipsPage
   ],
@@ -76,6 +79,7 @@ export const firebaseConfig = {
     DonacionesPage,
     FundacionesPage,
     HomefundacionPage,
+    DonaciondisponiblefundacionPage,
     SubirPage,
     TipsPage
   ],
