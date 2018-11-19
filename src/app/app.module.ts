@@ -9,6 +9,7 @@ import { CompareValidatorModule } from 'angular-compare-validator';
 import { PipesModule} from '../pipes/pipes.module';
 
 import { MyApp } from './app.component';
+import { AcercadePage } from '../pages/acercade/acercade';
 import { HomePage } from '../pages/home/home';
 import { HomefundacionPage } from './../pages/homefundacion/homefundacion';
 import { LoginPage } from '../pages/login/login';
@@ -34,6 +35,7 @@ import { CargaArchivoProvider } from '../providers/carga-archivo/carga-archivo';
 import { DonacionServiceProvider } from '../providers/donacion-service/donacion-service';
 
 
+
 export const firebaseConfig = {
   apiKey: "AIzaSyD-cXfMVY0m5GR2dUoT2IlYYQ_V13m230w",
   authDomain: "a-donar-se-dijo.firebaseapp.com",
@@ -56,7 +58,8 @@ export const firebaseConfig = {
     DonaciondisponiblefundacionPage,
     SubirPage,
     TipsPage,
-    PasoapasofundacionPage
+    PasoapasofundacionPage,
+    AcercadePage
   ],
 
   imports: [ 
@@ -84,7 +87,8 @@ export const firebaseConfig = {
     DonaciondisponiblefundacionPage,
     SubirPage,
     TipsPage,
-    PasoapasofundacionPage
+    PasoapasofundacionPage,
+    AcercadePage
   ],
   providers: [
     StatusBar,

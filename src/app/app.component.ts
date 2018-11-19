@@ -8,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 import {DonacionesPage} from '../pages/donaciones/donaciones';
 import {FundacionesPage} from '../pages/fundaciones/fundaciones';
 import { TipsPage } from './../pages/tips/tips';
+import { AcercadePage } from './../pages/acercade/acercade';
 
 import { ITEMS_MENU } from "../data/data.menu";
 import { Menu } from "../interfaces/menu.interface";
@@ -56,8 +57,10 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
-
-  
+  goacercade() {
+    this.nav.push(AcercadePage);
+  }
+    
   logout(){
   
     localStorage.removeItem("jwt"); //Se elimina el token jwt de la session
