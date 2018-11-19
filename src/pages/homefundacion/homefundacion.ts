@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DonacionesPage } from '../donaciones/donaciones';
 import { FundacionesPage} from '../fundaciones/fundaciones';
-
+import { PasoapasofundacionPage } from '../pasoapasofundacion/pasoapasofundacion';
 /**
  * Generated class for the HomefundacionPage page.
  *
@@ -26,5 +26,9 @@ export class HomefundacionPage {
     this.navCtrl.push(DonaciondisponiblefundacionPage);
   }
 
+  gopasoapasofundacion()
+  {
+    this.navCtrl.push(PasoapasofundacionPage);
+  }
 
 }

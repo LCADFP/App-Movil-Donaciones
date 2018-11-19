@@ -19,6 +19,7 @@ import { FundacionesPage} from '../pages/fundaciones/fundaciones'
 import { SubirPage } from '../pages/subir/subir';
 import { TipsPage } from '../pages/tips/tips';
 import { DonaciondisponiblefundacionPage } from './../pages/donaciondisponiblefundacion/donaciondisponiblefundacion';
+import { PasoapasofundacionPage } from './../pages/pasoapasofundacion/pasoapasofundacion';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -54,7 +55,8 @@ export const firebaseConfig = {
     HomefundacionPage,
     DonaciondisponiblefundacionPage,
     SubirPage,
-    TipsPage
+    TipsPage,
+    PasoapasofundacionPage
   ],
 
   imports: [ 
@@ -81,7 +83,8 @@ export const firebaseConfig = {
     HomefundacionPage,
     DonaciondisponiblefundacionPage,
     SubirPage,
-    TipsPage
+    TipsPage,
+    PasoapasofundacionPage
   ],
   providers: [
     StatusBar,
