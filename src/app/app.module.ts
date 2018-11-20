@@ -33,16 +33,17 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { CargaArchivoProvider } from '../providers/carga-archivo/carga-archivo';
 import { DonacionServiceProvider } from '../providers/donacion-service/donacion-service';
+import { ShareService } from '../services/share/share';
 
 
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyD-cXfMVY0m5GR2dUoT2IlYYQ_V13m230w",
-  authDomain: "a-donar-se-dijo.firebaseapp.com",
-  databaseURL: "https://a-donar-se-dijo.firebaseio.com",
-  projectId: "a-donar-se-dijo",
-  storageBucket: "a-donar-se-dijo.appspot.com",
-  messagingSenderId: "702629923733"
+  apiKey: "AIzaSyAOWXgb7qrR0i6lf-Qyx52V8hxyUARoUCk",
+  authDomain: "a-donar-se-dijo-f6243.firebaseapp.com",
+  databaseURL: "https://a-donar-se-dijo-f6243.firebaseio.com",
+  projectId: "a-donar-se-dijo-f6243",
+  storageBucket: "a-donar-se-dijo-f6243.appspot.com",
+  messagingSenderId: "335639534856"
 };
 
 @NgModule({
@@ -99,6 +100,7 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
     CargaArchivoProvider,
+    ShareService,
     DonacionServiceProvider
   ]
 })
