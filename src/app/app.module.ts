@@ -9,6 +9,7 @@ import { CompareValidatorModule } from 'angular-compare-validator';
 import { PipesModule} from '../pipes/pipes.module';
 
 import { MyApp } from './app.component';
+import { AcercadePage } from '../pages/acercade/acercade';
 import { HomePage } from '../pages/home/home';
 import { HomefundacionPage } from './../pages/homefundacion/homefundacion';
 import { LoginPage } from '../pages/login/login';
@@ -19,6 +20,7 @@ import { FundacionesPage} from '../pages/fundaciones/fundaciones'
 import { SubirPage } from '../pages/subir/subir';
 import { TipsPage } from '../pages/tips/tips';
 import { DonaciondisponiblefundacionPage } from './../pages/donaciondisponiblefundacion/donaciondisponiblefundacion';
+import { PasoapasofundacionPage } from './../pages/pasoapasofundacion/pasoapasofundacion';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,15 +33,16 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { CargaArchivoProvider } from '../providers/carga-archivo/carga-archivo';
 import { DonacionServiceProvider } from '../providers/donacion-service/donacion-service';
+import { ShareService } from '../services/share/share';
 
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyD-cXfMVY0m5GR2dUoT2IlYYQ_V13m230w",
-  authDomain: "a-donar-se-dijo.firebaseapp.com",
-  databaseURL: "https://a-donar-se-dijo.firebaseio.com",
-  projectId: "a-donar-se-dijo",
-  storageBucket: "a-donar-se-dijo.appspot.com",
-  messagingSenderId: "702629923733"
+  apiKey: "AIzaSyAOWXgb7qrR0i6lf-Qyx52V8hxyUARoUCk",
+  authDomain: "a-donar-se-dijo-f6243.firebaseapp.com",
+  databaseURL: "https://a-donar-se-dijo-f6243.firebaseio.com",
+  projectId: "a-donar-se-dijo-f6243",
+  storageBucket: "a-donar-se-dijo-f6243.appspot.com",
+  messagingSenderId: "335639534856"
 };
 
 @NgModule({
@@ -54,7 +57,9 @@ export const firebaseConfig = {
     HomefundacionPage,
     DonaciondisponiblefundacionPage,
     SubirPage,
-    TipsPage
+    TipsPage,
+    PasoapasofundacionPage,
+    AcercadePage
   ],
 
   imports: [ 
@@ -81,7 +86,9 @@ export const firebaseConfig = {
     HomefundacionPage,
     DonaciondisponiblefundacionPage,
     SubirPage,
-    TipsPage
+    TipsPage,
+    PasoapasofundacionPage,
+    AcercadePage
   ],
   providers: [
     StatusBar,
@@ -92,6 +99,7 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
     CargaArchivoProvider,
+    ShareService,
     DonacionServiceProvider
   ]
 })
