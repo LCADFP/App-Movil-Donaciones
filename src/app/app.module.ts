@@ -9,6 +9,7 @@ import { CompareValidatorModule } from 'angular-compare-validator';
 import { PipesModule} from '../pipes/pipes.module';
 
 import { MyApp } from './app.component';
+import { PerfiluserPage } from '../pages/perfiluser/perfiluser';
 import { AcercadePage } from '../pages/acercade/acercade';
 import { HomePage } from '../pages/home/home';
 import { HomefundacionPage } from './../pages/homefundacion/homefundacion';
@@ -60,7 +61,8 @@ export const firebaseConfig = {
     SubirPage,
     TipsPage,
     PasoapasofundacionPage,
-    AcercadePage
+    AcercadePage,
+    PerfiluserPage
   ],
 
   imports: [ 
@@ -89,7 +91,8 @@ export const firebaseConfig = {
     SubirPage,
     TipsPage,
     PasoapasofundacionPage,
-    AcercadePage
+    AcercadePage,
+    PerfiluserPage
   ],
   providers: [
     StatusBar,
