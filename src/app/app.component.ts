@@ -9,6 +9,8 @@ import {DonacionesPage} from '../pages/donaciones/donaciones';
 import {FundacionesPage} from '../pages/fundaciones/fundaciones';
 import { TipsPage } from './../pages/tips/tips';
 import { AcercadePage } from './../pages/acercade/acercade';
+import { PerfiluserPage } from './../pages/perfiluser/perfiluser';
+
 
 import { ITEMS_MENU } from "../data/data.menu";
 import { Menu } from "../interfaces/menu.interface";
@@ -59,6 +61,10 @@ export class MyApp {
 
   goacercade() {
     this.nav.push(AcercadePage);
+  }
+
+  goperfiluser() {
+    this.nav.push(PerfiluserPage);
   }
     
   logout(){

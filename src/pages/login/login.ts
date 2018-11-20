@@ -1,7 +1,8 @@
+import { ShareService } from './../../services/share/share';
 import { HomefundacionPage } from './../homefundacion/homefundacion';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, Content } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { IonicPage, NavController, NavParams, AlertController, Content } from 'ionic-angular'; 
+import { FormBuilder, FormGroup, Validators} from '@angular/forms'; 
 import { SignUpPage } from '../sign-up/sign-up';
 import { ForgotPassPage } from '../forgot-pass/forgot-pass';
 import { HomePage } from '../home/home';
@@ -23,7 +24,7 @@ export class LoginPage {
 
   formLogin : FormGroup;  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fb: FormBuilder, private userService:UserServiceProvider, public alertCtrl: AlertController ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private fb: FormBuilder, private userService:UserServiceProvider, public alertCtrl: AlertController, public shareService:ShareService) {
     
     this.formLogin = this.fb.group({ //Validacion de campos
 
@@ -61,12 +62,23 @@ export class LoginPage {
         localStorage.setItem('user', JSON.stringify(data["user"]));
         localStorage.setItem('jwt', data["jwt"])
         this.validaterole(data);
+        this.enviaraservicio();
         this.showNotification(data);
+        
+
          
       err => {console.log(err); this.showError(err)}
     }
     );
   }
+
+enviaraservicio(){
+  let user=localStorage.getItem("user");
+	let jwt=localStorage.getItem("jwt");
+	if(user && jwt ){
+    this.shareService.setUserName(user);
+		}
+}
 
 
 validaterole(data):any{
@@ -74,11 +86,11 @@ validaterole(data):any{
      
      if (rol === 2)
      {
-       this.navCtrl.setRoot(HomePage);
+       this.navCtrl.push(HomePage, {data});
      }
      else
      {
-       this.navCtrl.setRoot(HomefundacionPage);
+       this.navCtrl.push(HomefundacionPage, {data});
      }
      
 }

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
-import { CargaArchivoProvider } from "../../providers/carga-archivo/carga-archivo";
+import { CargaArchivoProvider } from "../../providers/carga-archivo/carga-archivo"; 
+import { ShareService } from './../../services/share/share';
 
 /**
  * Vista de Subir Imagen
@@ -19,11 +20,15 @@ export class SubirPage {
   titulo: string = "";
   imagenPreview: string = "";
   imagen64: string;
+  serviceData: any;
 
   constructor(private viewCtrl: ViewController,
     private camera: Camera,
     private imagePicker: ImagePicker,
-    public _cap: CargaArchivoProvider) {
+    public _cap: CargaArchivoProvider, 
+    public shareService: ShareService) {
+
+      this.serviceData = shareService.getUserName();
   }
    cerrar_modal(){
     this.viewCtrl.dismiss();
@@ -65,10 +70,11 @@ export class SubirPage {
     });
    }
 
-   crear_post(){
+   crear_post(serviceData){
     let archivo = {
       img: this.imagen64,
-      titulo: this.titulo
+      titulo: this.titulo,
+      id_current_user : serviceData.user.id_user
   }
     this._cap.cargar_imagen_firebase(archivo)
       .then(()=>this.cerrar_modal() )
