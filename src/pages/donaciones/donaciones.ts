@@ -1,4 +1,3 @@
-import { ShareService } from './../../services/share/share';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -22,13 +21,10 @@ import { SubirPage } from '../subir/subir';
 export class DonacionesPage {
   hayMas:boolean = true;
   posts: Observable<any[]>;
-  serviceData: any;
-
-
-  constructor(private modalCtrl: ModalController,afDB: AngularFireDatabase, shareService: ShareService) {
+ 
+  constructor(private modalCtrl: ModalController,afDB: AngularFireDatabase) {
       this.posts = afDB.list('post').valueChanges(); 
-      this.serviceData = shareService.getUserName();
-  }  
+    }  
 
   // ionViewWillEnter(){
   //   let data = JSON.parse(localStorage.getItem('data'));

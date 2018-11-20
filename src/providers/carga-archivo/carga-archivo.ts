@@ -88,7 +88,8 @@ export class CargaArchivoProvider {
                         let post: ArchivoSubir = {
                             img: downloadURL,
                             titulo:  archivo.titulo,
-                            key: nombreArchivo
+                            key: nombreArchivo,
+                            id: archivo.id
                         };
 
                         this.afDB.object(`/post/${ nombreArchivo }`).update(post);
@@ -118,4 +119,5 @@ interface ArchivoSubir{
     titulo: string;
     img: string;
     key?: string;
+    id:string
 }

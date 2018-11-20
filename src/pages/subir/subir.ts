@@ -20,7 +20,8 @@ export class SubirPage {
   titulo: string = "";
   imagenPreview: string = "";
   imagen64: string;
-  serviceData: any;
+  serviceData = [];
+  
 
   constructor(private viewCtrl: ViewController,
     private camera: Camera,
@@ -28,7 +29,7 @@ export class SubirPage {
     public _cap: CargaArchivoProvider, 
     public shareService: ShareService) {
 
-      this.serviceData = shareService.getUserName();
+      this.serviceData =shareService.getUserName();
   }
    cerrar_modal(){
     this.viewCtrl.dismiss();
@@ -71,11 +72,12 @@ export class SubirPage {
    }
 
    crear_post(serviceData){
+    let id= serviceData.id
     let archivo = {
       img: this.imagen64,
       titulo: this.titulo,
-      id_current_user : serviceData.user.id_user
-  }
+      id
+      }
     this._cap.cargar_imagen_firebase(archivo)
       .then(()=>this.cerrar_modal() )
  }
