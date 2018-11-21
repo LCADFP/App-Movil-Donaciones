@@ -38,7 +38,7 @@ export class CargaArchivoProvider {
 
         return new Promise( (resolve, reject)=>{
 
-            this.afDB.list('/post',ref=> ref.limitToLast(3).endAt( this.lastKey )
+            this.afDB.list('/post',ref=> ref.limitToLast(1).endAt( this.lastKey )
             ).valueChanges()
                 .subscribe(  (posts:any)=>{
                     posts.pop();
@@ -88,12 +88,12 @@ export class CargaArchivoProvider {
                         let post: ArchivoSubir = {
                             img: downloadURL,
                             titulo:  archivo.titulo,
-                            key: nombreArchivo,
-                            id: archivo.id
+                            key: nombreArchivo
                         };
 
                         this.afDB.object(`/post/${ nombreArchivo }`).update(post);
                         this.imagenes.push( post );
+                        
 
                     }).catch((error) =>
                     {
@@ -119,5 +119,4 @@ interface ArchivoSubir{
     titulo: string;
     img: string;
     key?: string;
-    id:string
 }
