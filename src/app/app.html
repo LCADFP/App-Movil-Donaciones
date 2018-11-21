@@ -9,9 +9,14 @@
       <h3 text-center>Bienvenido</h3>
       <img src="../assets/imgs/logo.png" class="icon-principal"><hr>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">        
+      <!--<button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">        
         <img [attr.src]="menu.imagen" class="icon">        
         <span class="tittle">{{p.title}}</span>
+      </button>-->
+
+      <button menuClose ion-item (click)="goperfiluser()">        
+        <img src="../assets/imgs/menuPrincipal/sidebar/usuario.png" class="icon" >  
+        <span class="tittle">Perfil</span>      
       </button>
 
       <button menuClose ion-item (click)="goacercade()">        
