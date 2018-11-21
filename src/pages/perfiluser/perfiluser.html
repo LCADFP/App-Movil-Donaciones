@@ -5,58 +5,56 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title text-center>Perfil</ion-title>
+    <ion-title >Perfil</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-    <h3 text-center>Bienvenido</h3>
-     <img src="../assets/imgs/logo.png" class="icon-principal"><hr>
+   <div>
+     <br>  <img src="../assets/imgs/perfil/usuarioperfil.png" class="icon-principal">
+  </div>
+     
 
-  <div class="content-log">
-    <form [formGroup] = "formRegistro" >
-      <ion-list>       
+  
+    <form>
+           
             
         <ion-item>    
           <ion-label floating>Nombre</ion-label>
-          <ion-input formControlName="nombres" type="text"></ion-input>    
+          <ion-input  type="text"></ion-input>    
         </ion-item>
                  
           
         <ion-item>
           <ion-label stacked>Fecha de nacimiento</ion-label>        
-          <ion-input formControlName="fecha_nac" type="date" placeholder="DD/MM/AAAA"></ion-input>           
+          <ion-input  type="date" placeholder="DD/MM/AAAA"></ion-input>           
         </ion-item>
 
             
         <ion-item>
           <ion-label floating>Direcci&oacute;n</ion-label>        
-          <ion-input formControlName="direccion" type="text"></ion-input>              
+          <ion-input  type="text"></ion-input>              
         </ion-item>
 
              
         <ion-item>
           <ion-label floating>Tel&eacute;fono</ion-label>        
-          <ion-input formControlName="telefono" type="phone"></ion-input>              
+          <ion-input  type="phone"></ion-input>              
         </ion-item>
              
         <ion-item>
           <ion-label floating>Correo electr&oacute;nico</ion-label>
-          <ion-input formControlName="email" type="email"></ion-input>                   
+          <ion-input  type="email"></ion-input>                   
         </ion-item>
                               
-      </ion-list>
+      
           
       <div padding>
-        <button ion-button color="design">Editar</button>
+        <button block ion-button color="design">Editar</button>
       </div>
 
     </form>    
-    
-  </div>
-
-      
+          
 </ion-content>
