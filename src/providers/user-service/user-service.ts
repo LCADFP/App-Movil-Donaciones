@@ -16,6 +16,7 @@ export class UserServiceProvider {
     console.log('Hello UserServiceProvider Provider');
     localStorage.setItem("apiUrl","http://localhost:3000/")
     
+    
   }  
 
   postData(data, url) {       
@@ -32,4 +33,15 @@ export class UserServiceProvider {
 
   } 
   
+  getdatosuser() {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'users').subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+
 }
+

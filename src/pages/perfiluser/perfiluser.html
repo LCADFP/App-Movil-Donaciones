@@ -21,36 +21,25 @@
     <form>
            
             
-        <ion-item>    
+        <ion-item *ngFor="let dato of datosdelusuario">   
+          
           <ion-label floating>Nombre</ion-label>
-          <ion-input  type="text"></ion-input>    
+          <ion-input type="text"> {{ dato.nombres }}</ion-input>
+
+          <ion-label floating>Fecha de nacimiento / creaci&oacute;n</ion-label>
+          <ion-input type="text" > {{ dato.fecha_nac }}</ion-input>
+
+          <ion-label floating>Dirección</ion-label> 
+          <ion-input  type="text">{{ dato.direccion }}</ion-input>
+
+          <ion-label floating>Teléfono de contacto</ion-label>
+          <ion-input type="text"> {{ dato.telefono }}</ion-input> 
+            
+          <ion-label floating>Correo electrónico</ion-label>
+          <ion-input type="text"> {{ dato.email }}</ion-input>
+          
         </ion-item>
                  
-          
-        <ion-item>
-          <ion-label stacked>Fecha de nacimiento</ion-label>        
-          <ion-input  type="date" placeholder="DD/MM/AAAA"></ion-input>           
-        </ion-item>
-
-            
-        <ion-item>
-          <ion-label floating>Direcci&oacute;n</ion-label>        
-          <ion-input  type="text"></ion-input>              
-        </ion-item>
-
-             
-        <ion-item>
-          <ion-label floating>Tel&eacute;fono</ion-label>        
-          <ion-input  type="phone"></ion-input>              
-        </ion-item>
-             
-        <ion-item>
-          <ion-label floating>Correo electr&oacute;nico</ion-label>
-          <ion-input  type="email"></ion-input>                   
-        </ion-item>
-                              
-      
-          
       <div padding>
         <button block ion-button color="design">Editar</button>
       </div>
