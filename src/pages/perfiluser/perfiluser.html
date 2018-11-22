@@ -20,30 +20,40 @@
   
     <form>
            
+         <ion-list *ngFor="let dato of datosdelusuario"> 
+
+            <ion-item >             
+               <ion-label floating>Nombre</ion-label>
+                  <ion-input type="text"> {{ dato.nombres }}</ion-input>
+            </ion-item >
+
+            <ion-item >   
+                <ion-label floating>Fecha de nacimiento / creaci&oacute;n</ion-label>
+                    <ion-input type="text" > {{ dato.fecha_nac }}</ion-input>
+            </ion-item>
+
+            <ion-item > 
+              <ion-label floating>Dirección</ion-label> 
+                <ion-input  type="text">{{ dato.direccion }}</ion-input>
+            </ion-item >     
             
-        <ion-item *ngFor="let dato of datosdelusuario">   
-          
-          <ion-label floating>Nombre</ion-label>
-          <ion-input type="text"> {{ dato.nombres }}</ion-input>
+            <ion-item >
+              <ion-label floating>Teléfono de contacto</ion-label>
+                <ion-input type="text"> {{ dato.telefono }}</ion-input> 
+            </ion-item>
 
-          <ion-label floating>Fecha de nacimiento / creaci&oacute;n</ion-label>
-          <ion-input type="text" > {{ dato.fecha_nac }}</ion-input>
-
-          <ion-label floating>Dirección</ion-label> 
-          <ion-input  type="text">{{ dato.direccion }}</ion-input>
-
-          <ion-label floating>Teléfono de contacto</ion-label>
-          <ion-input type="text"> {{ dato.telefono }}</ion-input> 
+            <ion-item >
+              <ion-label floating>Correo electrónico</ion-label>
+                <ion-input type="text"> {{ dato.email }}</ion-input>
+            </ion-item>
             
-          <ion-label floating>Correo electrónico</ion-label>
-          <ion-input type="text"> {{ dato.email }}</ion-input>
-          
-        </ion-item>
+          </ion-list> 
+        
                  
       <div padding>
         <button block ion-button color="design">Editar</button>
       </div>
-
+    
     </form>    
           
 </ion-content>
