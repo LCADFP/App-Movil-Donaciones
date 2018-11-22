@@ -24,7 +24,6 @@ export class LoginPage {
 
   formLogin : FormGroup;  
 
-
   constructor(public navCtrl: NavController, public navParams: NavParams, private fb: FormBuilder, private userService:UserServiceProvider, public alertCtrl: AlertController, public shareService:ShareService) {
     
     this.formLogin = this.fb.group({ //Validacion de campos
@@ -84,7 +83,7 @@ enviaraservicio(){
 
 validaterole(data):any{
    let rol= data.user.role_id
-    
+     
      if (rol === 2)
      {
        this.navCtrl.push(HomePage, {data});
@@ -110,34 +109,12 @@ validaterole(data):any{
   }
   
 	showNotification(data): any {
-
-    let msjporRol= data.user.role_id
-    
-    if (msjporRol === 2)
-     {
-      this.alertCtrl.create({
-        title: "Hola "+ data.user.nombres,
-        subTitle: "Ya puedes generar tus donaciones\n",
-        buttons: ['Ok']
-      }).present();
-     }
-     else
-     {
-      this.alertCtrl.create({
-        title: "Hola "+ data.user.nombres,
-        subTitle: "Ya puedes empezar a solicitar donaciones\n",
-        buttons: ['Ok']
-      }).present();
-     }
-     
-
-
-	//	console.log(data)
-		//this.alertCtrl.create({
-			//title: "Hola "+ data.user.nombres,
-			//subTitle: "Ya puedes generar tus donaciones\n",
-			//buttons: ['Ok']
-		//}).present();
+		console.log(data)
+		this.alertCtrl.create({
+			title: "Hola "+ data.user.nombres,
+			subTitle: "Ya puedes generar tus donaciones\n",
+			buttons: ['Ok']
+		}).present();
 
   }
 
