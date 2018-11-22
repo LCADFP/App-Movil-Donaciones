@@ -13,12 +13,37 @@
 
 <ion-content padding>
    <div>
-     <br>  <img src="../assets/imgs/perfil/usuarioperfil.png" class="icon-principal">
+     <br>  <img src="../assets/imgs/perfil/usuarioperfil.png" class="icon-principal"> <br>
   </div>
+
+  <ion-card *ngFor="let datosdelusuario of datosdelusuario">
+        <ion-card-content>
+        <ion-card-title text-center>
+            Datos del usuario
+        </ion-card-title><br>
+
+        <h3>Nombre:</h3>
+        <p>{{ datosdelusuario.nombres }}</p><br>
+
+        <h3>Dirección:</h3>
+        <p>{{ datosdelusuario.direccion }}</p><br>
+        
+        <h3>Teléfono de contacto:</h3>
+        <p>{{ datosdelusuario.telefono }}</p><br>
+
+        <h3>Correo electrónico </h3>
+        <p>{{ datosdelusuario.email }}</p><br>
+
+        </ion-card-content>
+
+        <div padding>
+          <button block ion-button color="design">Editar</button>
+        </div>
+</ion-card>
      
 
   
-    <form>
+    <!--<form>
            
             
         <ion-item *ngFor="let dato of datosdelusuario">   
@@ -44,6 +69,6 @@
         <button block ion-button color="design">Editar</button>
       </div>
 
-    </form>    
+    </form> -->   
           
 </ion-content>
