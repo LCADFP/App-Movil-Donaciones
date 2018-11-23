@@ -89,10 +89,10 @@ export class CargaArchivoProvider {
                         let post: ArchivoSubir = {
                             img: downloadURL,
                             titulo:  archivo.titulo,
-                            estado: archivo.estado,
-                            categoria: archivo.categoria,
-                            cantidad: archivo.cantidad,
-                            descripcion: archivo.descripcion,
+                            // estado: archivo.estado,
+                            // categoria: archivo.categoria,
+                            // cantidad: archivo.cantidad,
+                            // descripcion: archivo.descripcion,
                             key: nombreArchivo
                         };
 
@@ -123,9 +123,9 @@ export class CargaArchivoProvider {
 interface ArchivoSubir{
     titulo: string;
     img: string;
-    estado: string;
-    categoria: string;
-    cantidad: string;
-    descripcion: string;
+    // estado: string;
+    // categoria: string;
+    // cantidad: string;
+    // descripcion: string;
     key?: string;
 }

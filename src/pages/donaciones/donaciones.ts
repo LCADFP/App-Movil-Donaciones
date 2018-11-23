@@ -21,27 +21,27 @@ import { ShareService } from './../../services/share/share';
 export class DonacionesPage {
   hayMas:boolean = true;
   posts: Observable<any[]>;
-  serviceData: {};
+  // serviceData: {};
  
   constructor(private modalCtrl: ModalController,afDB: AngularFireDatabase, public shareService: ShareService ) {
      this.posts = afDB.list('post').valueChanges();   
-      this.serviceData =shareService.getUserName();
+      // this.serviceData =shareService.getUserName();
       // localStorage.setItem('user', JSON.stringify(this.serviceData["user"]));
-      this.variableid(this.serviceData);
+      // this.variableid(this.serviceData);
     }  
 
   // ionViewWillEnter(){
   //   let data = JSON.parse(localStorage.getItem('data'));
   // }
 
-  variableid(serviceData){
-      var objeto = JSON.parse(serviceData);
-     let id = objeto.nombres
-     if (id === "luis")
-     {
-      console.log(id);
-     }
-  }
+  // variableid(serviceData){
+  //     var objeto = JSON.parse(serviceData);
+  //    let id = objeto.nombres
+  //    if (id === "luis")
+  //    {
+  //     console.log(id);
+  //    }
+  // }
 
 
 

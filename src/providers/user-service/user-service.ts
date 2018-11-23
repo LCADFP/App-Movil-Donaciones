@@ -17,7 +17,7 @@ export class UserServiceProvider {
   constructor(public http: HttpClient) {
     console.log('Hello UserServiceProvider Provider');
     localStorage.setItem("apiUrl","https://apidonaciones.herokuapp.com/")
-    this.userId=JSON.parse(localStorage.getItem("user"))["id"];
+    // this.userId=JSON.parse(localStorage.getItem("user"))["id"];
     
     
   }  

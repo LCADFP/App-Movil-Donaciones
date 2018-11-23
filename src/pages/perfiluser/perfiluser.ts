@@ -23,21 +23,21 @@ export class PerfiluserPage {
   datosdelusuario: any ;
 
   constructor(public navCtrl: NavController, private userService:UserServiceProvider, public navParams: NavParams) {
-     this.getdatosuser();
+    //  this.getdatosuser();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfiluserPage');
   }
 
-  getdatosuser() {
-     this.userService.getdatosuser()
-    .then(data => {
-      this.datosdelusuario = data;
-      console.log(this.datosdelusuario);
-    });
+  // getdatosuser() {
+  //    this.userService.getdatosuser()
+  //   .then(data => {
+  //     this.datosdelusuario = data;
+  //     console.log(this.datosdelusuario);
+  //   });
   
-  }
+  // }
  
 }
 
