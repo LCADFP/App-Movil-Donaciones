@@ -19,10 +19,25 @@ export class DonacionServiceProvider {
     console.log('Hello DonacionServiceProvider Provider');
     // localStorage.setItem("apiUrl","http://localhost:3000/")
     localStorage.setItem("apiUrl","https://apidonaciones.herokuapp.com/")
+    this.userId=JSON.parse(localStorage.getItem("user"))["id"];
     
   }  
 
-  getDonaciones() {
+  getdonaciones(uri) {
+    
+    let headers = new HttpHeaders(
+      {
+        'Content-Type': 'application/json'
+        ,
+        'Authorization':'Bearer '+this.jwt
+      });
+      
+    const options = { headers: headers };
+        
+    return this.http.get(this.apiUrl+"donacions/"+this.userId+"/" + uri,options);
+  }
+
+  /*getDonaciones() {
     return new Promise(resolve => {
       this.http.get(this.apiUrl+'donacions').subscribe(data => {
         resolve(data);
@@ -30,19 +45,41 @@ export class DonacionServiceProvider {
         console.log(err);
       });
     });
-  }
+  }*/
   
-  postData(data) {       
+
+  /*postdonaciones(donacionData, uri) {
+    
+    let headers = new HttpHeaders(
+      {
+        'Content-Type': 'application/json'
+        ,
+        'Authorization':'Bearer '+this.jwt
+      });
+      
+    const options = { headers: headers };
+      
+    let json = JSON.stringify(donacionData);
+    console.log(json);
+    return this.http.post(this.apiUrl+"donacions/"+this.userId+"/" + uri, json, options);
+  }*/ 
+  
+  postData(donacionData, uri) {       
    
-    let headers = new HttpHeaders({
-       'Content-Type': 'application/json'
-    });
+    let headers = new HttpHeaders(
+      {
+        'Content-Type': 'application/json'
+        ,
+        'Authorization':'Bearer '+this.jwt
+      });
+
+      const options = { headers: headers };
+       
+    let json = JSON.stringify(donacionData);
+    console.log(json);
+    
+   
+   return this.http.post(this.apiUrl+"donacions/"+this.userId+"/" + uri, json, options);
  
-    const options = {headers:headers};
-    let json = JSON.stringify(data);
-    let apiUrl=localStorage.getItem("apiUrl");
-    let completeUrl = apiUrl +'donacions';
-    return this.http.post(completeUrl, json, options);
- 
-   } 
+   }
 }
