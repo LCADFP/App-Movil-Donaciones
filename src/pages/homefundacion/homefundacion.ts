@@ -32,7 +32,7 @@ export class HomefundacionPage {
     this.navCtrl.push(PasoapasofundacionPage);
   }
 
-  godonacionesdisponibles(){
+  godonacionesrecbidas(){
     this.navCtrl.push(DonacionesrecibidasfundacionPage);
   }
 
