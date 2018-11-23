@@ -39,7 +39,7 @@ export class UserServiceProvider {
   getdatosuser() {
     let headers = new HttpHeaders(
       {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json' //tener esta linea en cuenta parece que era la uri
         ,
         'Authorization':'Bearer '+this.jwt
       });
