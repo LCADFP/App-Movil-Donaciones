@@ -23,19 +23,19 @@ export class DonacionServiceProvider {
     
   }  
 
-  getdonaciones(uri) {
+  // getdonaciones(uri) {
     
-    let headers = new HttpHeaders(
-      {
-        'Content-Type': 'application/json'
-        ,
-        'Authorization':'Bearer '+this.jwt
-      });
+  //   let headers = new HttpHeaders(
+  //     {
+  //       'Content-Type': 'application/json'
+  //       ,
+  //       'Authorization':'Bearer '+this.jwt
+  //     });
       
-    const options = { headers: headers };
+  //   const options = { headers: headers };
         
-    return this.http.get(this.apiUrl+this.userId+"/" + uri,options);
-  }
+  //   return this.http.get(this.apiUrl+this.userId+"/" + uri,options);
+  // }
 
   /*getDonaciones() {
     return new Promise(resolve => {

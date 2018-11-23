@@ -24,7 +24,10 @@ export class SubirPage {
   titulo: string = "";
   imagenPreview: string = "";
   imagen64: string;
-  serviceData = {};
+  estadopro: string;
+  categoria:string;
+  Cantidad:string;
+  descripcion:string;
   posts = [];
   formDonacion : FormGroup;
   Id:number;  
@@ -38,7 +41,6 @@ export class SubirPage {
     public fb:FormBuilder,
     private alertCtrl : AlertController) {
       // this.Id=JSON.parse(localStorage.getItem("user"))["id"];            
-      this.serviceData =shareService.getUserName();
       // this.variableid(this.serviceData);
       // this.formDonacion = this.fb.group({ //Validacion de campos
 
@@ -92,11 +94,11 @@ export class SubirPage {
    crear_post(){
       let archivo = {
       img: this.imagen64,
-      titulo: this.formDonacion.value.titulo,
-      estado: this.formDonacion.value.estadopro,
-      categoria: this.formDonacion.value.categoria,
-      cantidad: this.formDonacion.value.Cantidad,
-      descripcion : this.formDonacion.value.descripcion,
+      titulo: this.titulo,
+      // estado: this.estadopro,
+      // categoria: this.categoria,
+      // cantidad: this.Cantidad,
+      // descripcion : this.descripcion,
      }
     this._cap.cargar_imagen_firebase(archivo)
       .then(()=>this.cerrar_modal() )

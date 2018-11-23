@@ -17,7 +17,7 @@ export class UserServiceProvider {
   constructor(public http: HttpClient) {
     console.log('Hello UserServiceProvider Provider');
     localStorage.setItem("apiUrl","https://apidonaciones.herokuapp.com/")
-    this.userId=JSON.parse(localStorage.getItem("user"))["id"];
+    // this.userId=JSON.parse(localStorage.getItem("user"))["id"];
     
     
   }  
@@ -36,23 +36,23 @@ export class UserServiceProvider {
 
   } 
   
-  getdatosuser() {
-    let headers = new HttpHeaders(
-      {
-        'Content-Type': 'application/json' //tener esta linea en cuenta parece que era la uri
-        ,
-        'Authorization':'Bearer '+this.jwt
-      });
-      const options = { headers: headers };
-    return new Promise(resolve => {
-      //this.http.get(this.apiUrl+'users')
-      this.http.get(this.apiUrl+"users/"+this.userId+"/" + options).subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }  
+  // getdatosuser() {
+  //   let headers = new HttpHeaders(
+  //     {
+  //       'Content-Type': 'application/json' //tener esta linea en cuenta parece que era la uri
+  //       ,
+  //       'Authorization':'Bearer '+this.jwt
+  //     });
+  //     const options = { headers: headers };
+  //   return new Promise(resolve => {
+  //     //this.http.get(this.apiUrl+'users')
+  //     this.http.get(this.apiUrl+"users/"+this.userId+"/" + options).subscribe(data => {
+  //       resolve(data);
+  //     }, err => {
+  //       console.log(err);
+  //     });
+  //   });
+  // }  
   
   //
 
