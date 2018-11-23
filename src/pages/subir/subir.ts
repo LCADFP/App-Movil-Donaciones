@@ -27,7 +27,7 @@ export class SubirPage {
   serviceData = {};
   posts = [];
   formDonacion : FormGroup;
-    
+  userId:number;  
 
   constructor(private viewCtrl: ViewController,
     private camera: Camera,
@@ -37,7 +37,7 @@ export class SubirPage {
     public DonacionesService :DonacionServiceProvider,
     public fb:FormBuilder,
     private alertCtrl : AlertController) {
-                 
+      this.userId=JSON.parse(localStorage.getItem("user"))["id"];            
       this.serviceData =shareService.getUserName();
       // this.variableid(this.serviceData);
       this.formDonacion = this.fb.group({ //Validacion de campos
@@ -124,9 +124,9 @@ export class SubirPage {
     categoria: this.formDonacion.value.categoria,
     cantidad: this.formDonacion.value.Cantidad,
     descripcion : this.formDonacion.value.descripcion,
-    // img : imgurl,
+    users_id : this.userId,
   }
-    this.DonacionesService.postData(donacionData)
+    this.DonacionesService.postData(donacionData, "donacions/")
     .subscribe(
       data => {
         this.showNotification(data);

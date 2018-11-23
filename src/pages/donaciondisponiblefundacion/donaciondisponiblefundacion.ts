@@ -21,19 +21,19 @@ export class DonaciondisponiblefundacionPage {
   donaciones: any ;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public DonacionesService :DonacionServiceProvider) {
-    this.getDonaciones();
+    // this.getDonaciones();
   }
   
 /* 
 metodo para traer datos de donaciones desde Donaciones providers
 */
-  getDonaciones() {
-    this.DonacionesService.getDonaciones()
-    .then(data => {
-      this.donaciones = data;
-      console.log(this.donaciones);
-    });
-  }
+  // getDonaciones() {
+  //   this.DonacionesService.getDonaciones()
+  //   .then(data => {
+  //     this.donaciones = data;
+  //     console.log(this.donaciones);
+  //   });
+  // }
 
 
   ionViewDidLoad() {

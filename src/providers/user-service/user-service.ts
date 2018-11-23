@@ -11,12 +11,12 @@ import { Injectable } from '@angular/core';
 export class UserServiceProvider {
  
   userId:number;
-  apiUrl = 'http://localhost:3000/';
+  apiUrl = 'https://apidonaciones.herokuapp.com/';
   jwt=localStorage.getItem("jwt");
 
   constructor(public http: HttpClient) {
     console.log('Hello UserServiceProvider Provider');
-    localStorage.setItem("apiUrl","http://localhost:3000/")
+    localStorage.setItem("apiUrl","https://apidonaciones.herokuapp.com/")
     this.userId=JSON.parse(localStorage.getItem("user"))["id"];
     
     
