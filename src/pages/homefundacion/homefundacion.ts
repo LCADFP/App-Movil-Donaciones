@@ -4,7 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DonacionesPage } from '../donaciones/donaciones';
 import { FundacionesPage} from '../fundaciones/fundaciones';
 import { PasoapasofundacionPage } from '../pasoapasofundacion/pasoapasofundacion';
-import { DonacionesrecibidasfundacionPage } from '../donacionesrecibidasfundacion/donacionesrecibidasfundacion';
+import { DonacionesrecibidasfundacionPage } from './../donacionesrecibidasfundacion/donacionesrecibidasfundacion';
+
 /**
  * Generated class for the HomefundacionPage page.
  *
@@ -34,6 +35,10 @@ export class HomefundacionPage {
 
   godonacionesrecbidas(){
     this.navCtrl.push(DonacionesrecibidasfundacionPage);
+  }
+
+  godonacionesdisponibles(){
+    this.navCtrl.push(DonaciondisponiblefundacionPage);
   }
 
 }
