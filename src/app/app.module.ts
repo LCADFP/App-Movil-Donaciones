@@ -22,6 +22,8 @@ import { SubirPage } from '../pages/subir/subir';
 import { TipsPage } from '../pages/tips/tips';
 import { DonaciondisponiblefundacionPage } from './../pages/donaciondisponiblefundacion/donaciondisponiblefundacion';
 import { PasoapasofundacionPage } from './../pages/pasoapasofundacion/pasoapasofundacion';
+import { HistorialdonacionesuserPage} from '../pages//historialdonacionesuser/historialdonacionesuser';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -62,7 +64,8 @@ export const firebaseConfig = {
     TipsPage,
     PasoapasofundacionPage,
     AcercadePage,
-    PerfiluserPage
+    PerfiluserPage,
+    HistorialdonacionesuserPage
   ],
 
   imports: [ 
@@ -92,7 +95,8 @@ export const firebaseConfig = {
     TipsPage,
     PasoapasofundacionPage,
     AcercadePage,
-    PerfiluserPage
+    PerfiluserPage,
+    HistorialdonacionesuserPage
   ],
   providers: [
     StatusBar,
