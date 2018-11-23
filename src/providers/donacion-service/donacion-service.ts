@@ -37,7 +37,7 @@ export class DonacionServiceProvider {
   //   return this.http.get(this.apiUrl+this.userId+"/" + uri,options);
   // }
 
-  /*getDonaciones() {
+  getDonaciones() {
     return new Promise(resolve => {
       this.http.get(this.apiUrl+'donacions').subscribe(data => {
         resolve(data);
@@ -45,7 +45,7 @@ export class DonacionServiceProvider {
         console.log(err);
       });
     });
-  }*/
+  }
   
 
   /*postdonaciones(donacionData, uri) {
