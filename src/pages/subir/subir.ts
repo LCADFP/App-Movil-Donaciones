@@ -21,16 +21,16 @@ import 'rxjs/add/operator/toPromise';
   templateUrl: 'subir.html',
 })
 export class SubirPage {
-  titulo: string = "";
-  imagenPreview: string = "";
+  titulo: string = '';
+  imagenPreview: string ='';
   imagen64: string;
-  estadopro: string;
-  categoria:string;
-  Cantidad:string;
-  descripcion:string;
-  posts = [];
+  estadopro: string ='';
+  categoria:string ='';
+  Cantidad:string ='';
+  descripcion:string ='';
+  // posts = [];
   formDonacion : FormGroup;
-  Id:number;  
+  // Id:number;  
 
   constructor(private viewCtrl: ViewController,
     private camera: Camera,
@@ -42,16 +42,16 @@ export class SubirPage {
     private alertCtrl : AlertController) {
       // this.Id=JSON.parse(localStorage.getItem("user"))["id"];            
       // this.variableid(this.serviceData);
-      // this.formDonacion = this.fb.group({ //Validacion de campos
+      this.formDonacion = this.fb.group({ //Validacion de campos
 
-      //   titulo : [''],
-      //   estadopro :[''],
-      //   categoria :[''],
-      //   Cantidad :[''],
-      //   direccion :[''],
-      //   descripcion :['']
+        titulo : [''],
+        estadopro :[''],
+        categoria :[''],
+        Cantidad :[''],
+        direccion :[''],
+        descripcion :['']
 
-      // });    
+      });    
          
   }
    cerrar_modal(){
@@ -94,11 +94,17 @@ export class SubirPage {
    crear_post(){
       let archivo = {
       img: this.imagen64,
-      titulo: this.titulo,
+      // titulo: this.titulo,
       // estado: this.estadopro,
       // categoria: this.categoria,
       // cantidad: this.Cantidad,
       // descripcion : this.descripcion,
+    titulo: this.formDonacion.value.titulo,
+    estado: this.formDonacion.value.estadopro,
+    categoria: this.formDonacion.value.categoria,
+    cantidad: this.formDonacion.value.Cantidad,
+    descripcion : this.formDonacion.value.descripcion,
+    
      }
     this._cap.cargar_imagen_firebase(archivo)
       .then(()=>this.cerrar_modal() )
