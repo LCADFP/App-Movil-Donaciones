@@ -10,11 +10,14 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class UserServiceProvider {
  
+  userId:number;
   apiUrl = 'http://localhost:3000/';
+  jwt=localStorage.getItem("jwt");
 
   constructor(public http: HttpClient) {
     console.log('Hello UserServiceProvider Provider');
     localStorage.setItem("apiUrl","http://localhost:3000/")
+    this.userId=JSON.parse(localStorage.getItem("user"))["id"];
     
     
   }  
@@ -34,14 +37,40 @@ export class UserServiceProvider {
   } 
   
   getdatosuser() {
+    let headers = new HttpHeaders(
+      {
+        'Content-Type': 'application/json'
+        ,
+        'Authorization':'Bearer '+this.jwt
+      });
+      const options = { headers: headers };
     return new Promise(resolve => {
-      this.http.get(this.apiUrl+'users').subscribe(data => {
+      //this.http.get(this.apiUrl+'users')
+      this.http.get(this.apiUrl+"users/"+this.userId+"/" + options).subscribe(data => {
         resolve(data);
       }, err => {
         console.log(err);
       });
     });
-  }
+  }  
+  
+  //
+
+  /*getdatosuser(uri) {
+    
+    let headers = new HttpHeaders(
+      {
+        'Content-Type': 'application/json'
+        ,
+        'Authorization':'Bearer '+this.jwt
+      });
+      
+    const options = { headers: headers };
+        
+    return this.http.get(this.apiUrl+"users/"+this.userId+"/" + uri,options);
+  }*/
+
+  
 
 }
 
