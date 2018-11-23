@@ -25,7 +25,7 @@ export class HistorialdonacionesuserPage {
 
   infohistorial() {
 			this.alertCtrl.create({
-			title: " Aviso ",
+			title: " Importante! ",
 			subTitle: "El proceso de entrega de donaciones tiene un tiempo máximo de 7 días para ser completado. \n",
 			buttons: ['Ok']
 		}).present();

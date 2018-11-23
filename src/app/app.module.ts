@@ -23,7 +23,7 @@ import { TipsPage } from '../pages/tips/tips';
 import { DonaciondisponiblefundacionPage } from './../pages/donaciondisponiblefundacion/donaciondisponiblefundacion';
 import { PasoapasofundacionPage } from './../pages/pasoapasofundacion/pasoapasofundacion';
 import { HistorialdonacionesuserPage} from '../pages//historialdonacionesuser/historialdonacionesuser';
-
+import { DonacionesrecibidasfundacionPage } from '../pages/donacionesrecibidasfundacion/donacionesrecibidasfundacion';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -65,7 +65,8 @@ export const firebaseConfig = {
     PasoapasofundacionPage,
     AcercadePage,
     PerfiluserPage,
-    HistorialdonacionesuserPage
+    HistorialdonacionesuserPage,
+    DonacionesrecibidasfundacionPage
   ],
 
   imports: [ 
@@ -96,7 +97,8 @@ export const firebaseConfig = {
     PasoapasofundacionPage,
     AcercadePage,
     PerfiluserPage,
-    HistorialdonacionesuserPage
+    HistorialdonacionesuserPage,
+    DonacionesrecibidasfundacionPage
   ],
   providers: [
     StatusBar,
