@@ -86,11 +86,11 @@ validaterole(data):any{
      
      if (rol === 2)
      {
-       this.navCtrl.push(HomePage, {data});
+       this.navCtrl.push(HomePage);
      }
      else
      {
-       this.navCtrl.push(HomefundacionPage, {data});
+       this.navCtrl.push(HomefundacionPage);
      }
      
 }

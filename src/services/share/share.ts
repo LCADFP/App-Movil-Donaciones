@@ -6,7 +6,7 @@ export class ShareService {
     Datacurrentuser: any;
 
     constructor() {
-        this.Datacurrentuser = [];
+        this.Datacurrentuser = {};
     }
  
     setUserName(Datacurrentuser) {
