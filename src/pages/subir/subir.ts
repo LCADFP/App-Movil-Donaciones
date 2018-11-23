@@ -4,6 +4,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { CargaArchivoProvider } from "../../providers/carga-archivo/carga-archivo"; 
 import { ShareService } from './../../services/share/share';
+import { DonacionServiceProvider } from '../../providers/donacion-service/donacion-service';
 
 /**
  * Vista de Subir Imagen
@@ -21,6 +22,7 @@ export class SubirPage {
   imagenPreview: string = "";
   imagen64: string;
   serviceData: any;
+  
 
   constructor(private viewCtrl: ViewController,
     private camera: Camera,
