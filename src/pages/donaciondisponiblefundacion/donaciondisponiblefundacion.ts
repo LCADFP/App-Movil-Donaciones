@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 
@@ -39,5 +39,20 @@ metodo para traer datos de donaciones desde Donaciones providers
   ionViewDidLoad() {
     console.log('ionViewDidLoad DonaciondisponiblefundacionPage');
   }
+
+  /*infbtnloquiero() {
+    this.alertCtrl.create({
+    title: " Muy bien! ",
+    subTitle: "Recuerda, tienes 7 dias para concretar la donación y finalizarla \n",
+    buttons: ['Ok']
+  }).present();
+
+  }*/
+
+  
+
+  //enviaradonap(){
+
+  //}
 
 }
