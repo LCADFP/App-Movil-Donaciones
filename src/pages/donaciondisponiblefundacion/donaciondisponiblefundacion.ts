@@ -40,14 +40,16 @@ metodo para traer datos de donaciones desde Donaciones providers
     console.log('ionViewDidLoad DonaciondisponiblefundacionPage');
   }
 
-  infbtnloquiero() {
+  /*infbtnloquiero() {
     this.alertCtrl.create({
     title: " Muy bien! ",
     subTitle: "Recuerda, tienes 7 dias para concretar la donación y finalizarla \n",
     buttons: ['Ok']
   }).present();
 
-}
+  }*/
+
+  
 
   //enviaradonap(){
 
