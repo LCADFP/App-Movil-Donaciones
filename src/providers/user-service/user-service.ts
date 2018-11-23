@@ -45,7 +45,7 @@ export class UserServiceProvider {
       });
       const options = { headers: headers };
     return new Promise(resolve => {
-      this.http.get(this.apiUrl+'users', options).subscribe(data => {
+      this.http.get(this.apiUrl+'users/', options).subscribe(data => {
       //this.http.get(this.apiUrl+"users/"+this.userId+"/" + options).subscribe(data => {
         resolve(data);
       }, err => {
