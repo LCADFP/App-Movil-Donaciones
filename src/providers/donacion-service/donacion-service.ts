@@ -34,7 +34,7 @@ export class DonacionServiceProvider {
       
     const options = { headers: headers };
         
-    return this.http.get(this.apiUrl+"donacions/"+this.userId+"/" + uri,options);
+    return this.http.get(this.apiUrl+this.userId+"/" + uri,options);
   }
 
   /*getDonaciones() {
@@ -79,7 +79,7 @@ export class DonacionServiceProvider {
     console.log(json);
     
    
-   return this.http.post(this.apiUrl+"donacions/"+this.userId+"/" + uri, json, options);
+   return this.http.post(this.apiUrl+uri, json, options);
  
    }
 }

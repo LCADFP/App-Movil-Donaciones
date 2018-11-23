@@ -19,11 +19,11 @@ import { UserServiceProvider } from '../../providers/user-service/user-service';
 
 export class PerfiluserPage {
 
+
   datosdelusuario: any ;
 
   constructor(public navCtrl: NavController, private userService:UserServiceProvider, public navParams: NavParams) {
-    this.getdatosuser();
-
+     this.getdatosuser();
   }
 
   ionViewDidLoad() {
@@ -31,7 +31,7 @@ export class PerfiluserPage {
   }
 
   getdatosuser() {
-    this.userService.getdatosuser()
+     this.userService.getdatosuser()
     .then(data => {
       this.datosdelusuario = data;
       console.log(this.datosdelusuario);
@@ -39,5 +39,6 @@ export class PerfiluserPage {
   
   }
  
- 
 }
+
+

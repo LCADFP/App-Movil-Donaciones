@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { TipsPage } from '../tips/tips'; 
 import { DonacionesPage } from '../donaciones/donaciones';
 import { FundacionesPage} from '../fundaciones/fundaciones';
+import { HistorialdonacionesuserPage} from '../historialdonacionesuser/historialdonacionesuser';
 
 
 
@@ -24,6 +25,11 @@ export class HomePage {
   gofundacion()
   {
     this.navCtrl.push(FundacionesPage);
+  }
+
+  gohistorialdonacionuser()
+  {
+    this.navCtrl.push(HistorialdonacionesuserPage);
   }
 
   gotips()

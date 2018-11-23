@@ -14,7 +14,6 @@ import 'rxjs/add/operator/map';
 export class CargaArchivoProvider {
     imagenes: ArchivoSubir[] = [];
     lastKey: string = null;
-    lastimg: string = null;
     constructor( public toastCtrl: ToastController,
                  public afDB: AngularFireDatabase, ) {        
         this.cargar_ultimo_key()
@@ -29,7 +28,6 @@ export class CargaArchivoProvider {
                 console.log(post);
                 if(post != undefined && post.length >0){
                     this.lastKey = post[0].key;
-                    this.lastimg= post[0].img;
                     this.imagenes.push( post[0] );
                 }
                 
@@ -91,6 +89,10 @@ export class CargaArchivoProvider {
                         let post: ArchivoSubir = {
                             img: downloadURL,
                             titulo:  archivo.titulo,
+                            estado: archivo.estado,
+                            categoria: archivo.categoria,
+                            cantidad: archivo.cantidad,
+                            descripcion: archivo.descripcion,
                             key: nombreArchivo
                         };
 
@@ -121,5 +123,9 @@ export class CargaArchivoProvider {
 interface ArchivoSubir{
     titulo: string;
     img: string;
+    estado: string;
+    categoria: string;
+    cantidad: string;
+    descripcion: string;
     key?: string;
 }
