@@ -4,10 +4,14 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { CargaArchivoProvider } from "../../providers/carga-archivo/carga-archivo"; 
 import { ShareService } from './../../services/share/share';
+<<<<<<< HEAD
 import { FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { DonacionServiceProvider } from './../../providers/donacion-service/donacion-service';
 import 'rxjs/add/operator/toPromise';
 
+=======
+import { DonacionServiceProvider } from '../../providers/donacion-service/donacion-service';
+>>>>>>> e25ce115e659cd4da093cd3528d33dcc1610245b
 
 /**
  * Vista de Subir Imagen
@@ -24,10 +28,15 @@ export class SubirPage {
   titulo: string = "";
   imagenPreview: string = "";
   imagen64: string;
+<<<<<<< HEAD
   serviceData = {};
   posts = [];
   formDonacion : FormGroup;
     
+=======
+  serviceData: any;
+  
+>>>>>>> e25ce115e659cd4da093cd3528d33dcc1610245b
 
   constructor(private viewCtrl: ViewController,
     private camera: Camera,
