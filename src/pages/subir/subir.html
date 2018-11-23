@@ -21,25 +21,37 @@
 
 </ion-header>
 
+<!-- <div class="content-log"> -->
 <ion-content padding>
+     <form [formGroup] = "formDonacion" (ngSubmit)="registroDonaciones()">
     <ion-list>
         <ion-item>
             <ion-label floating>Nombre del articulo</ion-label>
-            <ion-input type="text" [(ngModel)]="titulo"></ion-input>
+            <ion-input type="text" formControlName="titulo"></ion-input>
         </ion-item>
+        <!-- <div *ngIf="formDonacion.get('nombre').invalid && (formDonacion.get('nombre').dirty || formDonacion.get('nombre').touched)" class="alert alert-danger">
+                <div *ngIf="formDonacion.get('nombre').errors?.required">
+                  <span class="input-error">Campo obligatorio</span>
+                </div>
+         </div> -->
 
         <ion-item>
                 <ion-label floating>Estado</ion-label>
-                <ion-select>
-                        <ion-option value="Enuevo">Nuevo</ion-option>
-                        <ion-option value="Ebueno">Bueno</ion-option>
-                        <ion-option value="Eregular">Regular</ion-option>
+                <ion-select ([ngModel])="Estado"  formControlName="estadopro" >
+                        <ion-option value="nuevo">Nuevo</ion-option>
+                        <ion-option value="bueno">Bueno</ion-option>
+                        <ion-option value="regular">Regular</ion-option>
                 </ion-select>
         </ion-item>
+        <!-- <div *ngIf="formDonacion.get('estadopro').invalid && (formDonacion.get('estadopro').dirty || formDonacion.get('estadopro').touched)" class="alert alert-danger">
+            <div *ngIf="formDonacion.get('estadopro').errors?.required">
+              <span class="input-error">Campo obligatorio</span>
+            </div>
+        </div> -->
 
         <ion-item>
                 <ion-label floating>Categoria</ion-label>
-                <ion-select>
+                <ion-select ([ngModel])="Categoria"  formControlName="categoria">
                   <ion-option value="Juguetes">Juguetes</ion-option>
                   <ion-option value="Libros">Libros</ion-option>
                   <ion-option value="ropa">Ropa</ion-option>
@@ -48,22 +60,37 @@
                   <ion-option value="otro">otro</ion-option>
                 </ion-select>
         </ion-item>
+        <!-- <div *ngIf="formDonacion.get('categoria').invalid && (formDonacion.get('categoria').dirty || formDonacion.get('categoria').touched)" class="alert alert-danger">
+            <div *ngIf="formDonacion.get('categoria').errors?.required">
+              <span class="input-error">Campo obligatorio</span>
+            </div>
+        </div> -->
 
         <ion-item>
                 <ion-label floating>Cantidad</ion-label>
-                <ion-input type="text" ></ion-input>
+                <ion-input type="text"  formControlName="Cantidad"></ion-input>
         </ion-item>
+        <!-- <div *ngIf="formDonacion.get('Cantidad').invalid && (formDonacion.get('Cantidad').dirty || formDonacion.get('Cantidad').touched)" class="alert alert-danger">
+            <div *ngIf="formDonacion.get('Cantidad').errors?.required">
+              <span class="input-error">Campo obligatorio</span>
+            </div>
+        </div> -->
 
         <ion-item>
                 <ion-label floating>Descripcion</ion-label>
-                <ion-textarea ></ion-textarea>
+                <ion-input type="text"  formControlName="descripcion"></ion-input>
         </ion-item>
+        <!-- <div *ngIf="formDonacion.get('Descripcion').invalid && (formDonacion.get('Descripcion').dirty || formDonacion.get('Descripcion').touched)" class="alert alert-danger">
+            <div *ngIf="formDonacion.get('Descripcion').errors?.required">
+              <span class="input-error">Campo obligatorio</span>
+            </div>
+        </div> -->
+    
 
         <ion-item *ngIf="imagenPreview">
             <img [src]="imagenPreview">
         </ion-item>
     </ion-list>
-
     <ion-grid>
         <ion-row>
             <ion-col col-6>
@@ -83,11 +110,13 @@
 
 
         <ion-buttons end>
-            <button ion-button block item-left (click)="crear_post()"
-                [disabled]=" titulo.length <= 1 || imagenPreview.length <= 1 ">
-                crear donación
+            <button ion-button block item-left class="submit-btn" full type="submit" (click)="crear_post()"
+                
+            >crear donación
             
             </button>
         </ion-buttons>
+    </form>
 
 </ion-content>
+<!-- </div> -->

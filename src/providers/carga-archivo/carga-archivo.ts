@@ -14,12 +14,13 @@ import 'rxjs/add/operator/map';
 export class CargaArchivoProvider {
     imagenes: ArchivoSubir[] = [];
     lastKey: string = null;
+    lastimg: string = null;
     constructor( public toastCtrl: ToastController,
-                 public afDB: AngularFireDatabase ) {
+                 public afDB: AngularFireDatabase, ) {        
         this.cargar_ultimo_key()
             .subscribe( ()=> this.cargar_imagenes() )
     }
-
+   
     private cargar_ultimo_key(){
 
         return this.afDB.list('/post', ref=> ref.orderByKey().limitToLast(1) )
@@ -28,17 +29,19 @@ export class CargaArchivoProvider {
                 console.log(post);
                 if(post != undefined && post.length >0){
                     this.lastKey = post[0].key;
+                    this.lastimg= post[0].img;
                     this.imagenes.push( post[0] );
                 }
+                
             });
     }
 
-
+   
     cargar_imagenes(){
 
         return new Promise( (resolve, reject)=>{
 
-            this.afDB.list('/post',ref=> ref.limitToLast(1).endAt( this.lastKey )
+            this.afDB.list('/post',ref=> ref.limitToLast(3).endAt( this.lastKey )
             ).valueChanges()
                 .subscribe(  (posts:any)=>{
                     posts.pop();

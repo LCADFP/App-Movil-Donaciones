@@ -11,14 +11,15 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class DonacionServiceProvider {
-
-  //  apiUrl = 'http://localhost:3000/';
+   userId:number;
+   jwt=localStorage.getItem("jwt");
    apiUrl = 'https://apidonaciones.herokuapp.com/';
    
   constructor(public http: HttpClient) {
     console.log('Hello DonacionServiceProvider Provider');
     // localStorage.setItem("apiUrl","http://localhost:3000/")
     localStorage.setItem("apiUrl","https://apidonaciones.herokuapp.com/")
+    
   }  
 
   getDonaciones() {
@@ -30,4 +31,18 @@ export class DonacionServiceProvider {
       });
     });
   }
+  
+  postData(data) {       
+   
+    let headers = new HttpHeaders({
+       'Content-Type': 'application/json'
+    });
+ 
+    const options = {headers:headers};
+    let json = JSON.stringify(data);
+    let apiUrl=localStorage.getItem("apiUrl");
+    let completeUrl = apiUrl +'donacions';
+    return this.http.post(completeUrl, json, options);
+ 
+   } 
 }

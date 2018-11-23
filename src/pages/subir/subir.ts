@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
-import { ViewController } from 'ionic-angular';
+import { ViewController,  AlertController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { CargaArchivoProvider } from "../../providers/carga-archivo/carga-archivo"; 
 import { ShareService } from './../../services/share/share';
+import { FormGroup,FormBuilder,Validators} from '@angular/forms';
+import { DonacionServiceProvider } from './../../providers/donacion-service/donacion-service';
+import 'rxjs/add/operator/toPromise';
+
 
 /**
  * Vista de Subir Imagen
@@ -20,20 +24,37 @@ export class SubirPage {
   titulo: string = "";
   imagenPreview: string = "";
   imagen64: string;
-  id: any
   serviceData = {};
-  
+  posts = [];
+  formDonacion : FormGroup;
+    
 
   constructor(private viewCtrl: ViewController,
     private camera: Camera,
     private imagePicker: ImagePicker,
     public _cap: CargaArchivoProvider, 
-    public shareService: ShareService) {
-
+    public shareService: ShareService,
+    public DonacionesService :DonacionServiceProvider,
+    public fb:FormBuilder,
+    private alertCtrl : AlertController) {
+                 
       this.serviceData =shareService.getUserName();
+      // this.variableid(this.serviceData);
+      this.formDonacion = this.fb.group({ //Validacion de campos
+
+        titulo : [''],
+        estadopro :[''],
+        categoria :[''],
+        Cantidad :[''],
+        direccion :[''],
+        descripcion :['']
+
+      });    
+         
   }
    cerrar_modal(){
     this.viewCtrl.dismiss();
+  this.registroDonaciones();
   }
   
   mostrar_camara(){
@@ -64,11 +85,8 @@ export class SubirPage {
           this.imagenPreview = 'data:image/jpeg;base64,' + results[i];
           this.imagen64 = results[i];
       }
-
     }, (err) => {
-
       console.log( "ERROR en selector", JSON.stringify(err) );
-
     });
    }
 
@@ -79,7 +97,54 @@ export class SubirPage {
      }
     this._cap.cargar_imagen_firebase(archivo)
       .then(()=>this.cerrar_modal() )
- }
+      // this.variableUrl(this.posts);
+ } 
+ 
+//  variableid(serviceData){
+//     var objeto = JSON.parse(serviceData);
+//     let id_user = objeto.id;
+    
+//  }
+
+//  variableUrl(posts){
+//      var objeto2 = JSON.parse(posts)
+//      let DATA_URL = objeto2.img;
+//  }
+
+ registroDonaciones(){
+  // var objeto = JSON.parse(serviceData);
+  // let users_id = objeto.id;
+  // var objeto2 = JSON.parse(posts)
+  // let DATA_URL = objeto2.img;
+  // let imgurl=localStorage.getItem("posts");
+  let donacionData={
+        
+    nombre: this.formDonacion.value.titulo,
+    estado: this.formDonacion.value.estadopro,
+    categoria: this.formDonacion.value.categoria,
+    cantidad: this.formDonacion.value.Cantidad,
+    descripcion : this.formDonacion.value.descripcion,
+    // img : imgurl,
+  }
+    this.DonacionesService.postData(donacionData)
+    .subscribe(
+      data => {
+        this.showNotification(data);
+      },
+    );   
+
+    }
+
+    showNotification(data): any{
+
+      console.log(data);
+      this.alertCtrl.create({
+        title: " Hola " + data["descripcion"],
+        subTitle: "Registro exitoso",
+        message:"Ahora debes" + data["categoria"],
+        buttons: ['Ok']
+      }).present();
+  
 } 
 
-
+}

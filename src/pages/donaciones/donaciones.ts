@@ -24,7 +24,7 @@ export class DonacionesPage {
   serviceData: {};
  
   constructor(private modalCtrl: ModalController,afDB: AngularFireDatabase, public shareService: ShareService ) {
-      this.posts = afDB.list('post').valueChanges(); 
+     this.posts = afDB.list('post').valueChanges();   
       this.serviceData =shareService.getUserName();
       // localStorage.setItem('user', JSON.stringify(this.serviceData["user"]));
       this.variableid(this.serviceData);
@@ -35,7 +35,7 @@ export class DonacionesPage {
   // }
 
   variableid(serviceData){
-     var objeto = JSON.parse(serviceData);
+      var objeto = JSON.parse(serviceData);
      let id = objeto.nombres
      if (id === "luis")
      {
@@ -43,14 +43,14 @@ export class DonacionesPage {
      }
   }
 
+
+
   mostrar_modal(){
           let modal = this.modalCtrl.create( SubirPage);
           modal.present();
   }
       doInfinite(infiniteScroll) {  }
       compartir( post:any ){ }    
-
-
  
 }
 
