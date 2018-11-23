@@ -1,9 +1,8 @@
-import { DonacionServiceProvider } from './../../providers/donacion-service/donacion-service';
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
-
 
 /**
  * Generated class for the DonaciondisponiblefundacionPage page.
@@ -19,9 +18,10 @@ import { Observable } from 'rxjs';
 })
 export class DonaciondisponiblefundacionPage {
   donaciones: any ;
+  posts: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,public DonacionesService :DonacionServiceProvider) {
-    // this.getDonaciones();
+  constructor(afDB: AngularFireDatabase ) {
+    this.posts = afDB.list('post').valueChanges();   
   }
   
 /* 
