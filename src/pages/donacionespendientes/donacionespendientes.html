@@ -25,5 +25,10 @@
         Cantidad:  {{ donaciones.cantidad }} <br>
         Descripcion:  {{ donaciones.descripcion }} <br>
     </ion-card-content>
+
+    <button ion-button item-left block color="danger"
+                            (click)="infdonapen(); gohome() ">
+                        <ion-icon name="md-thumbs-up"></ion-icon> Finalizar
+                    </button>
 </ion-card>
 </ion-content>

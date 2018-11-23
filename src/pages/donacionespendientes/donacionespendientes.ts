@@ -1,6 +1,7 @@
 import { DonacionServiceProvider } from './../../providers/donacion-service/donacion-service';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { HomefundacionPage} from '../homefundacion/homefundacion';
 
 /**
  * Generated class for the DonacionespendientesPage page.
@@ -17,7 +18,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class DonacionespendientesPage {
   donaciones: any ;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public DonacionesService :DonacionServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public DonacionesService :DonacionServiceProvider) {
     this.getDonaciones();
   }
   
@@ -34,6 +35,18 @@ export class DonacionespendientesPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DonacionespendientesPage');
+  }
+
+  infdonapen() {
+    this.alertCtrl.create({
+    title: " Hecho! ",
+    subTitle: " Donacion finalizada\n",
+    buttons: ['Ok']
+  }).present();
+
+}
+  gohome(){
+    this.navCtrl.push(HomefundacionPage);
   }
 
 }

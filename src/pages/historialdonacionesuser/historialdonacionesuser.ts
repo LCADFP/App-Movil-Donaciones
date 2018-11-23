@@ -16,7 +16,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 })
 export class HistorialdonacionesuserPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {

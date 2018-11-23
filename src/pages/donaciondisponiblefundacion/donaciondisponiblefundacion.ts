@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
+import { DonacionespendientesPage} from '../donacionespendientes/donacionespendientes';
 
 /**
  * Generated class for the DonaciondisponiblefundacionPage page.
@@ -20,7 +21,7 @@ export class DonaciondisponiblefundacionPage {
   donaciones: any ;
   posts: Observable<any[]>;
 
-  constructor(afDB: AngularFireDatabase ) {
+  constructor(afDB: AngularFireDatabase, public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams ) {
     this.posts = afDB.list('post').valueChanges();   
   }
   
@@ -38,6 +39,18 @@ metodo para traer datos de donaciones desde Donaciones providers
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DonaciondisponiblefundacionPage');
+  }
+
+  infbtnloquiero() {
+    this.alertCtrl.create({
+    title: " Muy bien! ",
+    subTitle: "Ahora solo te queda coordinar la entrega \n",
+    buttons: ['Ok']
+  }).present();
+
+}
+  godonacionespen(){
+    this.navCtrl.push(DonacionespendientesPage);
   }
 
   /*infbtnloquiero() {
